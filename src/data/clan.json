@@ -1,0 +1,839 @@
+{
+  "tag": "#8URQ0UR8",
+  "name": "Synergy Fusion",
+  "type": "inviteOnly",
+  "description": "Synergy's War Clan > Discord.gg/7tAN74 / Weekly Cash Tourney / 200+ War Wins / 70% Win Rate/50% Lvl12+ Cards",
+  "badgeId": 16000139,
+  "clanScore": 60827,
+  "clanWarTrophies": 36242,
+  "location": {
+      "id": 57000249,
+      "name": "United States",
+      "isCountry": true,
+      "countryCode": "US"
+  },
+  "requiredTrophies": 5600,
+  "donationsPerWeek": 1048,
+  "clanChestStatus": "inactive",
+  "clanChestLevel": 1,
+  "clanChestMaxLevel": 0,
+  "members": 48,
+  "memberList": [
+      {
+          "tag": "#P8JV0YL",
+          "name": "Light Year",
+          "role": "elder",
+          "lastSeen": "20200503T193214.000Z",
+          "expLevel": 13,
+          "trophies": 6409,
+          "arena": {
+              "id": 54000019,
+              "name": "Grand Champion"
+          },
+          "clanRank": 1,
+          "previousClanRank": 1,
+          "donations": 0,
+          "donationsReceived": 0,
+          "clanChestPoints": 0
+      },
+      {
+          "tag": "#Q2RU09QP",
+          "name": "BBZP",
+          "role": "elder",
+          "lastSeen": "20200504T013225.000Z",
+          "expLevel": 13,
+          "trophies": 6326,
+          "arena": {
+              "id": 54000019,
+              "name": "Grand Champion"
+          },
+          "clanRank": 2,
+          "previousClanRank": 5,
+          "donations": 0,
+          "donationsReceived": 8,
+          "clanChestPoints": 0
+      },
+      {
+          "tag": "#2808UULQV",
+          "name": "SPICY DIC!",
+          "role": "elder",
+          "lastSeen": "20200504T024032.000Z",
+          "expLevel": 13,
+          "trophies": 6319,
+          "arena": {
+              "id": 54000019,
+              "name": "Grand Champion"
+          },
+          "clanRank": 3,
+          "previousClanRank": 3,
+          "donations": 20,
+          "donationsReceived": 40,
+          "clanChestPoints": 0
+      },
+      {
+          "tag": "#Y0YVPVJR",
+          "name": "KING KODAK",
+          "role": "member",
+          "lastSeen": "20200504T043349.000Z",
+          "expLevel": 13,
+          "trophies": 6300,
+          "arena": {
+              "id": 54000019,
+              "name": "Grand Champion"
+          },
+          "clanRank": 4,
+          "previousClanRank": 14,
+          "donations": 40,
+          "donationsReceived": 40,
+          "clanChestPoints": 0
+      },
+      {
+          "tag": "#9YQUUU8",
+          "name": "DAETH",
+          "role": "elder",
+          "lastSeen": "20200503T211629.000Z",
+          "expLevel": 13,
+          "trophies": 6255,
+          "arena": {
+              "id": 54000018,
+              "name": "Champion"
+          },
+          "clanRank": 5,
+          "previousClanRank": 6,
+          "donations": 0,
+          "donationsReceived": 0,
+          "clanChestPoints": 0
+      },
+      {
+          "tag": "#80RJLUV8V",
+          "name": "Alastor",
+          "role": "coLeader",
+          "lastSeen": "20200503T233227.000Z",
+          "expLevel": 13,
+          "trophies": 6254,
+          "arena": {
+              "id": 54000018,
+              "name": "Champion"
+          },
+          "clanRank": 6,
+          "previousClanRank": 4,
+          "donations": 40,
+          "donationsReceived": 0,
+          "clanChestPoints": 0
+      },
+      {
+          "tag": "#U8Q8J8CY",
+          "name": "zeppelin41",
+          "role": "member",
+          "lastSeen": "20200504T013200.000Z",
+          "expLevel": 13,
+          "trophies": 6248,
+          "arena": {
+              "id": 54000018,
+              "name": "Champion"
+          },
+          "clanRank": 7,
+          "previousClanRank": 2,
+          "donations": 60,
+          "donationsReceived": 0,
+          "clanChestPoints": 0
+      },
+      {
+          "tag": "#92PR280R",
+          "name": "Commander",
+          "role": "member",
+          "lastSeen": "20200504T052602.000Z",
+          "expLevel": 13,
+          "trophies": 6209,
+          "arena": {
+              "id": 54000018,
+              "name": "Champion"
+          },
+          "clanRank": 8,
+          "previousClanRank": 0,
+          "donations": 0,
+          "donationsReceived": 0,
+          "clanChestPoints": 0
+      },
+      {
+          "tag": "#YPVURR2G",
+          "name": ">LEG3ND<",
+          "role": "member",
+          "lastSeen": "20200504T052553.000Z",
+          "expLevel": 13,
+          "trophies": 6201,
+          "arena": {
+              "id": 54000018,
+              "name": "Champion"
+          },
+          "clanRank": 9,
+          "previousClanRank": 8,
+          "donations": 20,
+          "donationsReceived": 40,
+          "clanChestPoints": 0
+      },
+      {
+          "tag": "#9U2QLJYV",
+          "name": "ΤψΤ ⚡️ ΑδαηV",
+          "role": "member",
+          "lastSeen": "20200504T044914.000Z",
+          "expLevel": 13,
+          "trophies": 6159,
+          "arena": {
+              "id": 54000018,
+              "name": "Champion"
+          },
+          "clanRank": 10,
+          "previousClanRank": 19,
+          "donations": 60,
+          "donationsReceived": 40,
+          "clanChestPoints": 0
+      },
+      {
+          "tag": "#YR2VJ2UQ",
+          "name": "Jimby",
+          "role": "elder",
+          "lastSeen": "20200503T223425.000Z",
+          "expLevel": 13,
+          "trophies": 6131,
+          "arena": {
+              "id": 54000018,
+              "name": "Champion"
+          },
+          "clanRank": 11,
+          "previousClanRank": 11,
+          "donations": 0,
+          "donationsReceived": 0,
+          "clanChestPoints": 0
+      },
+      {
+          "tag": "#QGP0QVR",
+          "name": "Soroush",
+          "role": "elder",
+          "lastSeen": "20200504T053626.000Z",
+          "expLevel": 13,
+          "trophies": 6110,
+          "arena": {
+              "id": 54000018,
+              "name": "Champion"
+          },
+          "clanRank": 12,
+          "previousClanRank": 13,
+          "donations": 0,
+          "donationsReceived": 0,
+          "clanChestPoints": 0
+      },
+      {
+          "tag": "#999YURL2",
+          "name": "bnito",
+          "role": "elder",
+          "lastSeen": "20200503T150642.000Z",
+          "expLevel": 13,
+          "trophies": 6105,
+          "arena": {
+              "id": 54000018,
+              "name": "Champion"
+          },
+          "clanRank": 13,
+          "previousClanRank": 7,
+          "donations": 0,
+          "donationsReceived": 0,
+          "clanChestPoints": 0
+      },
+      {
+          "tag": "#YVQU8Y9Y",
+          "name": "Baby Dragon",
+          "role": "elder",
+          "lastSeen": "20200504T004415.000Z",
+          "expLevel": 13,
+          "trophies": 6104,
+          "arena": {
+              "id": 54000018,
+              "name": "Champion"
+          },
+          "clanRank": 14,
+          "previousClanRank": 10,
+          "donations": 18,
+          "donationsReceived": 40,
+          "clanChestPoints": 0
+      },
+      {
+          "tag": "#2G9LYCJV",
+          "name": "Ethan",
+          "role": "coLeader",
+          "lastSeen": "20200504T051237.000Z",
+          "expLevel": 13,
+          "trophies": 6097,
+          "arena": {
+              "id": 54000018,
+              "name": "Champion"
+          },
+          "clanRank": 15,
+          "previousClanRank": 26,
+          "donations": 0,
+          "donationsReceived": 40,
+          "clanChestPoints": 0
+      },
+      {
+          "tag": "#PGGR2208",
+          "name": "Drat",
+          "role": "elder",
+          "lastSeen": "20200504T010257.000Z",
+          "expLevel": 13,
+          "trophies": 6077,
+          "arena": {
+              "id": 54000018,
+              "name": "Champion"
+          },
+          "clanRank": 16,
+          "previousClanRank": 9,
+          "donations": 114,
+          "donationsReceived": 0,
+          "clanChestPoints": 0
+      },
+      {
+          "tag": "#882URULJ",
+          "name": "Good Vibes",
+          "role": "member",
+          "lastSeen": "20200504T004905.000Z",
+          "expLevel": 13,
+          "trophies": 6076,
+          "arena": {
+              "id": 54000018,
+              "name": "Champion"
+          },
+          "clanRank": 17,
+          "previousClanRank": 16,
+          "donations": 0,
+          "donationsReceived": 40,
+          "clanChestPoints": 0
+      },
+      {
+          "tag": "#9UYRPJ8G",
+          "name": "Smashbronson",
+          "role": "member",
+          "lastSeen": "20200504T044839.000Z",
+          "expLevel": 13,
+          "trophies": 6063,
+          "arena": {
+              "id": 54000018,
+              "name": "Champion"
+          },
+          "clanRank": 18,
+          "previousClanRank": 18,
+          "donations": 40,
+          "donationsReceived": 40,
+          "clanChestPoints": 0
+      },
+      {
+          "tag": "#2CG2V0LU",
+          "name": "gonzalo",
+          "role": "member",
+          "lastSeen": "20200504T040237.000Z",
+          "expLevel": 13,
+          "trophies": 6056,
+          "arena": {
+              "id": 54000018,
+              "name": "Champion"
+          },
+          "clanRank": 19,
+          "previousClanRank": 12,
+          "donations": 18,
+          "donationsReceived": 40,
+          "clanChestPoints": 0
+      },
+      {
+          "tag": "#Y2Y9Y",
+          "name": "yourdaddy",
+          "role": "elder",
+          "lastSeen": "20200504T050948.000Z",
+          "expLevel": 13,
+          "trophies": 6045,
+          "arena": {
+              "id": 54000018,
+              "name": "Champion"
+          },
+          "clanRank": 20,
+          "previousClanRank": 21,
+          "donations": 78,
+          "donationsReceived": 40,
+          "clanChestPoints": 0
+      },
+      {
+          "tag": "#LL8UCP9Y",
+          "name": "zenthimega",
+          "role": "elder",
+          "lastSeen": "20200504T010857.000Z",
+          "expLevel": 13,
+          "trophies": 6031,
+          "arena": {
+              "id": 54000018,
+              "name": "Champion"
+          },
+          "clanRank": 21,
+          "previousClanRank": 25,
+          "donations": 38,
+          "donationsReceived": 40,
+          "clanChestPoints": 0
+      },
+      {
+          "tag": "#R2LUL9U9",
+          "name": "BOOGIEMAN",
+          "role": "member",
+          "lastSeen": "20200504T054808.000Z",
+          "expLevel": 13,
+          "trophies": 6019,
+          "arena": {
+              "id": 54000018,
+              "name": "Champion"
+          },
+          "clanRank": 22,
+          "previousClanRank": 24,
+          "donations": 28,
+          "donationsReceived": 0,
+          "clanChestPoints": 0
+      },
+      {
+          "tag": "#80998PUR",
+          "name": "欧德bot",
+          "role": "member",
+          "lastSeen": "20200504T040238.000Z",
+          "expLevel": 13,
+          "trophies": 6018,
+          "arena": {
+              "id": 54000018,
+              "name": "Champion"
+          },
+          "clanRank": 23,
+          "previousClanRank": 15,
+          "donations": 20,
+          "donationsReceived": 40,
+          "clanChestPoints": 0
+      },
+      {
+          "tag": "#YVCV9CLL",
+          "name": "Karma Police",
+          "role": "elder",
+          "lastSeen": "20200504T002358.000Z",
+          "expLevel": 13,
+          "trophies": 6013,
+          "arena": {
+              "id": 54000018,
+              "name": "Champion"
+          },
+          "clanRank": 24,
+          "previousClanRank": 23,
+          "donations": 10,
+          "donationsReceived": 40,
+          "clanChestPoints": 0
+      },
+      {
+          "tag": "#99QLL29V",
+          "name": "ThunderCloud!",
+          "role": "coLeader",
+          "lastSeen": "20200503T175308.000Z",
+          "expLevel": 13,
+          "trophies": 6011,
+          "arena": {
+              "id": 54000018,
+              "name": "Champion"
+          },
+          "clanRank": 25,
+          "previousClanRank": 20,
+          "donations": 0,
+          "donationsReceived": 0,
+          "clanChestPoints": 0
+      },
+      {
+          "tag": "#98VYJ99GJ",
+          "name": "xoxoxo",
+          "role": "leader",
+          "lastSeen": "20200504T012943.000Z",
+          "expLevel": 13,
+          "trophies": 6010,
+          "arena": {
+              "id": 54000018,
+              "name": "Champion"
+          },
+          "clanRank": 26,
+          "previousClanRank": 22,
+          "donations": 20,
+          "donationsReceived": 0,
+          "clanChestPoints": 0
+      },
+      {
+          "tag": "#JG90GQGG",
+          "name": "<c2>Deemo",
+          "role": "elder",
+          "lastSeen": "20200503T174816.000Z",
+          "expLevel": 13,
+          "trophies": 5963,
+          "arena": {
+              "id": 54000017,
+              "name": "Master III"
+          },
+          "clanRank": 27,
+          "previousClanRank": 27,
+          "donations": 0,
+          "donationsReceived": 0,
+          "clanChestPoints": 0
+      },
+      {
+          "tag": "#YGQ8YCQ2",
+          "name": "The Scrub™️",
+          "role": "member",
+          "lastSeen": "20200504T040855.000Z",
+          "expLevel": 13,
+          "trophies": 5947,
+          "arena": {
+              "id": 54000017,
+              "name": "Master III"
+          },
+          "clanRank": 28,
+          "previousClanRank": 29,
+          "donations": 10,
+          "donationsReceived": 40,
+          "clanChestPoints": 0
+      },
+      {
+          "tag": "#QVJYQYQ",
+          "name": "Daniel-.-",
+          "role": "elder",
+          "lastSeen": "20200504T035713.000Z",
+          "expLevel": 13,
+          "trophies": 5919,
+          "arena": {
+              "id": 54000017,
+              "name": "Master III"
+          },
+          "clanRank": 29,
+          "previousClanRank": 32,
+          "donations": 20,
+          "donationsReceived": 40,
+          "clanChestPoints": 0
+      },
+      {
+          "tag": "#2GU8Y8VCU",
+          "name": "Baja",
+          "role": "member",
+          "lastSeen": "20200504T024719.000Z",
+          "expLevel": 13,
+          "trophies": 5907,
+          "arena": {
+              "id": 54000017,
+              "name": "Master III"
+          },
+          "clanRank": 30,
+          "previousClanRank": 31,
+          "donations": 10,
+          "donationsReceived": 40,
+          "clanChestPoints": 0
+      },
+      {
+          "tag": "#JRU2V28V",
+          "name": "☠☢Ǥнσsτ☢☠",
+          "role": "member",
+          "lastSeen": "20200504T045955.000Z",
+          "expLevel": 13,
+          "trophies": 5897,
+          "arena": {
+              "id": 54000017,
+              "name": "Master III"
+          },
+          "clanRank": 31,
+          "previousClanRank": 28,
+          "donations": 0,
+          "donationsReceived": 0,
+          "clanChestPoints": 0
+      },
+      {
+          "tag": "#90C9RG8R",
+          "name": "-=SinSys=-",
+          "role": "coLeader",
+          "lastSeen": "20200504T055001.000Z",
+          "expLevel": 13,
+          "trophies": 5886,
+          "arena": {
+              "id": 54000017,
+              "name": "Master III"
+          },
+          "clanRank": 32,
+          "previousClanRank": 30,
+          "donations": 50,
+          "donationsReceived": 40,
+          "clanChestPoints": 0
+      },
+      {
+          "tag": "#98QG2C9",
+          "name": "Dethrone",
+          "role": "elder",
+          "lastSeen": "20200504T050822.000Z",
+          "expLevel": 13,
+          "trophies": 5853,
+          "arena": {
+              "id": 54000017,
+              "name": "Master III"
+          },
+          "clanRank": 33,
+          "previousClanRank": 34,
+          "donations": 114,
+          "donationsReceived": 40,
+          "clanChestPoints": 0
+      },
+      {
+          "tag": "#2L0J98Q",
+          "name": "Dani",
+          "role": "elder",
+          "lastSeen": "20200504T051637.000Z",
+          "expLevel": 13,
+          "trophies": 5811,
+          "arena": {
+              "id": 54000017,
+              "name": "Master III"
+          },
+          "clanRank": 34,
+          "previousClanRank": 33,
+          "donations": 0,
+          "donationsReceived": 40,
+          "clanChestPoints": 0
+      },
+      {
+          "tag": "#2C0CY2VR",
+          "name": ">< jonah ><",
+          "role": "elder",
+          "lastSeen": "20200503T215919.000Z",
+          "expLevel": 13,
+          "trophies": 5785,
+          "arena": {
+              "id": 54000017,
+              "name": "Master III"
+          },
+          "clanRank": 35,
+          "previousClanRank": 36,
+          "donations": 0,
+          "donationsReceived": 0,
+          "clanChestPoints": 0
+      },
+      {
+          "tag": "#9Q9JCC9Y",
+          "name": "Aqaleii",
+          "role": "member",
+          "lastSeen": "20200504T015507.000Z",
+          "expLevel": 13,
+          "trophies": 5771,
+          "arena": {
+              "id": 54000017,
+              "name": "Master III"
+          },
+          "clanRank": 36,
+          "previousClanRank": 35,
+          "donations": 8,
+          "donationsReceived": 40,
+          "clanChestPoints": 0
+      },
+      {
+          "tag": "#9PQJY0PR",
+          "name": "llvllagnum",
+          "role": "member",
+          "lastSeen": "20200503T225311.000Z",
+          "expLevel": 13,
+          "trophies": 5768,
+          "arena": {
+              "id": 54000017,
+              "name": "Master III"
+          },
+          "clanRank": 37,
+          "previousClanRank": 38,
+          "donations": 0,
+          "donationsReceived": 0,
+          "clanChestPoints": 0
+      },
+      {
+          "tag": "#8UCUVVQ2",
+          "name": "Oddi-",
+          "role": "coLeader",
+          "lastSeen": "20200503T181444.000Z",
+          "expLevel": 13,
+          "trophies": 5758,
+          "arena": {
+              "id": 54000017,
+              "name": "Master III"
+          },
+          "clanRank": 38,
+          "previousClanRank": 37,
+          "donations": 0,
+          "donationsReceived": 0,
+          "clanChestPoints": 0
+      },
+      {
+          "tag": "#8J8V2CPYL",
+          "name": "Carlos H.",
+          "role": "member",
+          "lastSeen": "20200504T042251.000Z",
+          "expLevel": 13,
+          "trophies": 5689,
+          "arena": {
+              "id": 54000017,
+              "name": "Master III"
+          },
+          "clanRank": 39,
+          "previousClanRank": 39,
+          "donations": 60,
+          "donationsReceived": 40,
+          "clanChestPoints": 0
+      },
+      {
+          "tag": "#JJR0Y2L2",
+          "name": "Mrs. Ukno",
+          "role": "member",
+          "lastSeen": "20200504T003817.000Z",
+          "expLevel": 13,
+          "trophies": 5666,
+          "arena": {
+              "id": 54000017,
+              "name": "Master III"
+          },
+          "clanRank": 40,
+          "previousClanRank": 42,
+          "donations": 0,
+          "donationsReceived": 0,
+          "clanChestPoints": 0
+      },
+      {
+          "tag": "#8RV8GGQ2U",
+          "name": "LosEnfermos",
+          "role": "member",
+          "lastSeen": "20200504T045602.000Z",
+          "expLevel": 13,
+          "trophies": 5653,
+          "arena": {
+              "id": 54000017,
+              "name": "Master III"
+          },
+          "clanRank": 41,
+          "previousClanRank": 41,
+          "donations": 0,
+          "donationsReceived": 40,
+          "clanChestPoints": 0
+      },
+      {
+          "tag": "#220CYQ0C8",
+          "name": "♠️♠️Joke",
+          "role": "member",
+          "lastSeen": "20200504T045530.000Z",
+          "expLevel": 13,
+          "trophies": 5636,
+          "arena": {
+              "id": 54000017,
+              "name": "Master III"
+          },
+          "clanRank": 42,
+          "previousClanRank": 43,
+          "donations": 46,
+          "donationsReceived": 0,
+          "clanChestPoints": 0
+      },
+      {
+          "tag": "#90R0QL2",
+          "name": "Manny",
+          "role": "coLeader",
+          "lastSeen": "20200504T050632.000Z",
+          "expLevel": 13,
+          "trophies": 5625,
+          "arena": {
+              "id": 54000017,
+              "name": "Master III"
+          },
+          "clanRank": 43,
+          "previousClanRank": 40,
+          "donations": 0,
+          "donationsReceived": 40,
+          "clanChestPoints": 0
+      },
+      {
+          "tag": "#R9JP2JRQ",
+          "name": "nostos",
+          "role": "coLeader",
+          "lastSeen": "20200504T051058.000Z",
+          "expLevel": 13,
+          "trophies": 5600,
+          "arena": {
+              "id": 54000017,
+              "name": "Master III"
+          },
+          "clanRank": 44,
+          "previousClanRank": 46,
+          "donations": 10,
+          "donationsReceived": 40,
+          "clanChestPoints": 0
+      },
+      {
+          "tag": "#28RVGUG8",
+          "name": "downerxv3",
+          "role": "elder",
+          "lastSeen": "20200504T053922.000Z",
+          "expLevel": 13,
+          "trophies": 5492,
+          "arena": {
+              "id": 54000016,
+              "name": "Master II"
+          },
+          "clanRank": 45,
+          "previousClanRank": 44,
+          "donations": 30,
+          "donationsReceived": 0,
+          "clanChestPoints": 0
+      },
+      {
+          "tag": "#20QUJYUY",
+          "name": "ᎢᎧᎮᎧ",
+          "role": "member",
+          "lastSeen": "20200504T034619.000Z",
+          "expLevel": 13,
+          "trophies": 5452,
+          "arena": {
+              "id": 54000016,
+              "name": "Master II"
+          },
+          "clanRank": 46,
+          "previousClanRank": 45,
+          "donations": 0,
+          "donationsReceived": 40,
+          "clanChestPoints": 0
+      },
+      {
+          "tag": "#VUQ29RQP",
+          "name": "Lichking",
+          "role": "coLeader",
+          "lastSeen": "20200504T034711.000Z",
+          "expLevel": 13,
+          "trophies": 5363,
+          "arena": {
+              "id": 54000016,
+              "name": "Master II"
+          },
+          "clanRank": 47,
+          "previousClanRank": 17,
+          "donations": 56,
+          "donationsReceived": 0,
+          "clanChestPoints": 0
+      },
+      {
+          "tag": "#QC9JLUR",
+          "name": "☯️",
+          "role": "elder",
+          "lastSeen": "20200504T044809.000Z",
+          "expLevel": 13,
+          "trophies": 5254,
+          "arena": {
+              "id": 54000015,
+              "name": "Master I"
+          },
+          "clanRank": 48,
+          "previousClanRank": 47,
+          "donations": 10,
+          "donationsReceived": 40,
+          "clanChestPoints": 0
+      }
+  ]
+}
