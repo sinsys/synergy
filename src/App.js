@@ -64,6 +64,7 @@ function App() {
           return curPlayer;
         })
         setCombinedPlayerData(membersArr);
+        console.log(membersArr);
       })
 
     return (() => {});
