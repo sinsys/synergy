@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import BaseTable, { Column, SortOrder } from 'react-base-table';
+import config from './config';
 import 'react-base-table/styles.css'
 
 import './App.css';
+
 
 function App() {
 
@@ -15,8 +17,8 @@ function App() {
 
   useEffect(() => {
     Promise.all([
-      fetch(`http://localhost:8000/api/wars/8URQ0UR8`),
-      fetch(`http://localhost:8000/api/players/clan/8URQ0UR8`)
+      fetch(`${config.REACT_APP_API_ENDPOINT}/wars/8URQ0UR8`),
+      fetch(`${config.REACT_APP_API_ENDPOINT}/players/clan/8URQ0UR8`)
     ])
       .then(responses => Promise.all(responses.map(res => res.json())))
       .then(([wars, members]) => {
