@@ -1,0 +1,23 @@
+@import './base.scss';
+
+.App {
+  min-height: 100vh;
+  min-width: 100vw;
+  background: url('./assets/images/background.jpg') repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.App * {
+  font-family: 'scmagic';
+}
+
+.App p,
+.App h1,
+.App h2,
+.App h3,
+.App span {
+  color: $white;
+}
