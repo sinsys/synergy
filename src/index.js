@@ -1,12 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { SynergyContextProvider } from 'contexts/SynergyContext';
+import './reset.scss';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Router>
+      <SynergyContextProvider>
+        <App />
+      </SynergyContextProvider>
+    </Router>
   </React.StrictMode>,
   document.getElementById('root')
 );
