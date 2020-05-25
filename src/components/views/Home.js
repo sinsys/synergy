@@ -1,21 +1,24 @@
 import React, { useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import { SynergyContext } from 'contexts/SynergyContext';
-import Button from 'components/elements/Button';
 import ClanBadge from 'components/badges/ClanBadge';
 import './Home.scss';
+import Button from 'components/elements/Button';
 
 const Home = () => {
 
   const { state } = useContext(SynergyContext);
   const history = useHistory();
-  
+
   return (
     <div className="HomeView">
+      <Button
+        text="Test"
+      />
       <h1 style={{"padding": "1rem"}}>We are currently under construction. Please be patient while we develop more features.</h1>
-      { state.raw.clans.map(clan => {
+      { state.clans.map(clan => {
         return (
-          <ClanBadge clan={clan} />
+          <ClanBadge key={clan.tag} clan={clan} />
         );
       })}
       {/* { state.raw.clans.map(clan => {
