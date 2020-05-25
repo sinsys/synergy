@@ -14,14 +14,17 @@ import './ClanBadge.scss';
 const ClanBadge = (props) => {
 
   const clan = props.clan;
-
+  const badge = clan.badge_id
+    ? require(`../../assets/cr-assets/images/badges/${clan.badge_id}.png`)
+    : require(`../../assets/cr-assets/images/badges/0.png`);
+    
   return (
     <div className="ClanBadge">
       <div className="clan__name">
         <h1>        
           <img
             className="clan__badge" 
-            src={require(`../../assets/cr-assets/images/badges/${clan.badge_id}.png`)}
+            src={badge}
             alt="Clan Badge"
           />
           <span className="clan__name_text">

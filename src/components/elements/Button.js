@@ -4,17 +4,13 @@ import './Button.scss';
 const Button = (props) => {
   return (
     <div className="Button">
-      <button 
-        className={`button ${props.classes}`}
-        name={props.name}
-        type={props.type}
-        value={props.value}
-        onClick={props.action}
+      <a 
+        className={`button ${props.classes}`} 
+        target="_blank"
+        href="/"
       >
-        <div className="button__inner">
-          {props.text}
-        </div>
-      </button>
+        <span>{props.text}</span>
+      </a>
     </div>
   );
 }

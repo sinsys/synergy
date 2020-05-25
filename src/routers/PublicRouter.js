@@ -2,6 +2,7 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import Home from 'components/views/Home.js';
 import Clan from 'components/views/Clan';
+import Players from 'components/views/Players';
 
 const PublicRouter = () => {
 
@@ -13,14 +14,20 @@ const PublicRouter = () => {
           component={Home}
         />
         <Route
-          exact path={'/clan/:tag'}
-          render={(routeProps) => {
-            return (
-              <Clan
-                clanTag={routeProps.match.params.tag}
-              />
-            );
-          }}
+          exact path={'/clans/all'}
+          component={Clan}
+        />
+        <Route
+          exact path={'/clans/:clan_tag'}
+          component={Clan}
+        />
+        <Route
+          exact path={'/players/all'}
+          component={Players}
+        />
+        <Route
+          exact path={'players/:clan_tag'}
+          component={Players}
         />
       </Switch>
     </div>

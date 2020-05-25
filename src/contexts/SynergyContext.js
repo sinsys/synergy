@@ -13,41 +13,23 @@ const SynergyContext = createContext();
 // Set default context
 const initialState = {
   fetched: false,
-  raw: {
-    cards: [],
-    players: [],
-    clans: [],
-    wars: [],
-    warPlayers: []
-  },
-  currentClan: {
-    clan: {},
-    players: [],
-    wars: []
-  }
+  cards: [],
+  clans: []
 };
 
 const reducer = (state, action) => {
   let payload = action.payload;
   switch (action.type) {
-    case 'setRawData':
+    case 'setCards':
       return {
         ...state,
-        fetched: true,
-        raw: {
-          ...state.raw,
-          ...payload
-        }
-      };
-    case 'setClanData':
-      return {
-        ...state,
-        currentClan: {
-          clan: payload.clan,
-          players: payload.players,
-          wars: payload.wars.wars
-        }
+        cards: payload
       }
+    case 'setClans':
+      return {
+        ...state,
+        clans: payload
+      };
     default: return initialState;
   };
 };
