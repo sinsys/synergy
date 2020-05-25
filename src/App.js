@@ -3,7 +3,7 @@ import PublicRouter from 'routers/PublicRouter';
 import config from './config';
 import { SynergyContext } from 'contexts/SynergyContext';
 import MenuBar from 'components/widgets/MenuBar';
-
+import MenuDrawer from 'components/widgets/MenuDrawer';
 // Needed for Material UI
 import 'typeface-roboto';
 // App Styles
@@ -39,7 +39,8 @@ const App = () => {
 
   return (
     <div className="App">
-      <MenuBar />
+      <MenuBar />|
+      <MenuDrawer />
       <PublicRouter />
     </div>
   );
