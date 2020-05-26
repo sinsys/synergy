@@ -17,7 +17,9 @@ import { faHome } from '@fortawesome/free-solid-svg-icons';
 import { faShieldAlt } from '@fortawesome/free-solid-svg-icons';
 import { faUsers } from '@fortawesome/free-solid-svg-icons';
 import { faChartLine } from '@fortawesome/free-solid-svg-icons';
-import { faMoneyBillWave } from '@fortawesome/free-solid-svg-icons';
+import { faSitemap } from '@fortawesome/free-solid-svg-icons';
+import { faHandHoldingUsd } from '@fortawesome/free-solid-svg-icons';
+import { faDiscord } from '@fortawesome/free-brands-svg-icons';
 
 const useStyles = makeStyles({
   list: {
@@ -98,8 +100,16 @@ export default function MenuDrawer() {
           <ListItemText primary={"Analytics"} />
         </ListItem>
         <ListItem button key={"tournaments"}>
-          <ListItemIcon><FontAwesomeIcon className="small_icon" icon={faMoneyBillWave} /></ListItemIcon>
-          <ListItemText primary={"Tournies & Giveaways"} />
+          <ListItemIcon><FontAwesomeIcon className="small_icon" icon={faSitemap} /></ListItemIcon>
+          <ListItemText primary={"Tournaments"} />
+        </ListItem>
+        <ListItem button key={"giveaways"}>
+          <ListItemIcon><FontAwesomeIcon className="small_icon" icon={faHandHoldingUsd} /></ListItemIcon>
+          <ListItemText primary={"Give-aways"} />
+        </ListItem>
+        <ListItem button key={"discord"}>
+          <ListItemIcon><FontAwesomeIcon className="small_icon" icon={faDiscord} /></ListItemIcon>
+          <ListItemText primary={"Discord"} />
         </ListItem>
       </List>
       <Divider />
