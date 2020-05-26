@@ -57,6 +57,16 @@ const formatPlayerStats = (wars, members) => {
   return membersArr;
 };
 
+const formatClanStatus = (clanStatus) => {
+  switch(clanStatus) {
+    case "inviteOnly": return "Invite";
+    case "closed": return "Closed";
+    case "open": return "Open";
+    default: return "Loading..."
+  };
+};
+
 module.exports = {
-  formatPlayerStats
+  formatPlayerStats,
+  formatClanStatus
 };

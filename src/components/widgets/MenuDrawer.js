@@ -1,4 +1,5 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
+
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 import { SynergyContext } from 'contexts/SynergyContext';
@@ -16,6 +17,7 @@ import { faHome } from '@fortawesome/free-solid-svg-icons';
 import { faShieldAlt } from '@fortawesome/free-solid-svg-icons';
 import { faUsers } from '@fortawesome/free-solid-svg-icons';
 import { faChartLine } from '@fortawesome/free-solid-svg-icons';
+import { faMoneyBillWave } from '@fortawesome/free-solid-svg-icons';
 
 const useStyles = makeStyles({
   list: {
@@ -35,7 +37,8 @@ export default function MenuDrawer() {
   const classes = useStyles();
   const { state, dispatch } = useContext(MenuContext);
   const synergyContext = useContext(SynergyContext);
-  
+  const [selected, setSelected] = useState("");
+
   const clans = synergyContext.state.clans.length > 0
     ? synergyContext.state.clans
     : [];
@@ -78,7 +81,7 @@ export default function MenuDrawer() {
       onKeyDown={toggleDrawer(false)}
     >
       <List className="menu-list">
-        <ListItem selected button key={"overview"}>
+        <ListItem selected={selected === 'overview'} button key={"overview"} onClick={(e) => setSelected("overview")}>
           <ListItemIcon><FontAwesomeIcon className="small_icon" icon={faHome} /></ListItemIcon>
           <ListItemText primary={"Overview"} className="font-override scmagic" />
         </ListItem>
@@ -93,6 +96,10 @@ export default function MenuDrawer() {
         <ListItem button key={"analytics"}>
           <ListItemIcon><FontAwesomeIcon className="small_icon" icon={faChartLine} /></ListItemIcon>
           <ListItemText primary={"Analytics"} />
+        </ListItem>
+        <ListItem button key={"tournaments"}>
+          <ListItemIcon><FontAwesomeIcon className="small_icon" icon={faMoneyBillWave} /></ListItemIcon>
+          <ListItemText primary={"Tournies & Giveaways"} />
         </ListItem>
       </List>
       <Divider />
@@ -115,3 +122,5 @@ export default function MenuDrawer() {
     </React.Fragment>
   );
 }
+
+

@@ -10,6 +10,8 @@ import { faGlobeAmericas } from '@fortawesome/free-solid-svg-icons'
 import { faTrophy } from '@fortawesome/free-solid-svg-icons'
 import { faUserPlus } from '@fortawesome/free-solid-svg-icons'
 
+import { formatClanStatus } from 'utils/format-data';
+
 import './ClanBadge.scss';
 const ClanBadge = (props) => {
 
@@ -17,7 +19,7 @@ const ClanBadge = (props) => {
   const badge = clan.badge_id
     ? require(`../../assets/cr-assets/images/badges/${clan.badge_id}.png`)
     : require(`../../assets/cr-assets/images/badges/0.png`);
-    
+  
   return (
     <div className="ClanBadge">
       <div className="clan__name">
@@ -80,10 +82,8 @@ const ClanBadge = (props) => {
           <FontAwesomeIcon className="small_icon" icon={faUserPlus} />
           <p>
             {typeof clan.type !== "undefined" 
-              ? clan.type === "inviteOnly"
-                ? "Invite Only"
-                : "Open"
-              : "...Loading"
+              ? formatClanStatus(clan.type)
+              : "Loading..."
             }
           </p>
         </div>
