@@ -15,6 +15,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome } from '@fortawesome/free-solid-svg-icons';
 import { faShieldAlt } from '@fortawesome/free-solid-svg-icons';
 import { faUsers } from '@fortawesome/free-solid-svg-icons';
+import { faChartLine } from '@fortawesome/free-solid-svg-icons';
 
 const useStyles = makeStyles({
   list: {
@@ -22,8 +23,7 @@ const useStyles = makeStyles({
     color: '#FEFEFE'
   },
   fullList: {
-    width: 'auto',
-    fontFamily: 'scmagic'
+    width: 'auto'
   },
   paper: {
     background: '#333'
@@ -31,7 +31,7 @@ const useStyles = makeStyles({
 });
 
 export default function MenuDrawer() {
-  
+
   const classes = useStyles();
   const { state, dispatch } = useContext(MenuContext);
   const synergyContext = useContext(SynergyContext);
@@ -78,7 +78,7 @@ export default function MenuDrawer() {
       onKeyDown={toggleDrawer(false)}
     >
       <List className="menu-list">
-        <ListItem button key={"overview"}>
+        <ListItem selected button key={"overview"}>
           <ListItemIcon><FontAwesomeIcon className="small_icon" icon={faHome} /></ListItemIcon>
           <ListItemText primary={"Overview"} className="font-override scmagic" />
         </ListItem>
@@ -90,6 +90,10 @@ export default function MenuDrawer() {
           <ListItemIcon><FontAwesomeIcon className="small_icon" icon={faUsers} /></ListItemIcon>
           <ListItemText primary={"Members"} />
         </ListItem>
+        <ListItem button key={"analytics"}>
+          <ListItemIcon><FontAwesomeIcon className="small_icon" icon={faChartLine} /></ListItemIcon>
+          <ListItemText primary={"Analytics"} />
+        </ListItem>
       </List>
       <Divider />
       <List>
@@ -99,17 +103,15 @@ export default function MenuDrawer() {
   );
 
   return (
-    <div>
-      <React.Fragment key="left">
-        <Drawer 
-          anchor={"left"} 
-          open={state["isOpen"]} 
-          onClose={toggleDrawer(false)} 
-          classes={{paper: classes.paper}}
-        >
-          {list("left")}
-        </Drawer>
-      </React.Fragment>
-    </div>
+    <React.Fragment key="left">
+      <Drawer 
+        anchor={"left"} 
+        open={state["isOpen"]} 
+        onClose={toggleDrawer(false)} 
+        classes={{paper: classes.paper}}
+      >
+        {list("left")}
+      </Drawer>
+    </React.Fragment>
   );
 }

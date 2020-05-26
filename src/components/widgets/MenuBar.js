@@ -28,7 +28,7 @@ const MenuBar = (props) => {
     },
   }));
 
-  const { state, dispatch } = useContext(MenuContext);
+  const { dispatch } = useContext(MenuContext);
 
   const toggleDrawer = (open) => (event) => {
     if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {

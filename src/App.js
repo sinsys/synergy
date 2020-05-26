@@ -1,11 +1,12 @@
 import React, { useEffect, useContext } from 'react';
 import PublicRouter from 'routers/PublicRouter';
 import config from './config';
+import { MuiThemeProvider } from '@material-ui/core/styles';
 import { SynergyContext } from 'contexts/SynergyContext';
 import MenuBar from 'components/widgets/MenuBar';
 import MenuDrawer from 'components/widgets/MenuDrawer';
-// Needed for Material UI
-import 'typeface-roboto';
+import supercell from 'themes/supercell';
+
 // App Styles
 import './App.scss';
 
@@ -38,11 +39,15 @@ const App = () => {
   },[dispatch]);
 
   return (
-    <div className="App">
-      <MenuBar />|
-      <MenuDrawer />
-      <PublicRouter />
-    </div>
+    <MuiThemeProvider theme={supercell}>
+      <div className="App">
+        <MenuBar />|
+        <MenuDrawer />
+        <h1 style={{"padding": "1rem"}}>We are currently under construction. Please be patient while we develop more features.</h1>
+        <PublicRouter />
+      </div>
+    </MuiThemeProvider>
+
   );
 }
 
