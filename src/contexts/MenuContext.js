@@ -9,7 +9,8 @@ const MenuContext = createContext();
 
 // Set default context
 const initialState = {
-  isOpen: false
+  isOpen: false,
+  currentPath: '/'
 };
 
 const reducer = (state, action) => {
@@ -19,6 +20,11 @@ const reducer = (state, action) => {
       return {
         ...state,
         isOpen: payload
+      }
+    case 'setCurrentPage':
+      return {
+        ...state,
+        currentPath: payload
       }
     default: return initialState;
   };

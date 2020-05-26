@@ -1,4 +1,5 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
+import { Link, useHistory, useRouteMatch } from 'react-router-dom';
 
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
@@ -13,13 +14,17 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome } from '@fortawesome/free-solid-svg-icons';
-import { faShieldAlt } from '@fortawesome/free-solid-svg-icons';
-import { faUsers } from '@fortawesome/free-solid-svg-icons';
-import { faChartLine } from '@fortawesome/free-solid-svg-icons';
-import { faSitemap } from '@fortawesome/free-solid-svg-icons';
-import { faHandHoldingUsd } from '@fortawesome/free-solid-svg-icons';
+import { 
+  faHome,
+  faShieldAlt,
+  faUsers,
+  faChartLine,
+  faSitemap,
+  faHandHoldingUsd
+} from '@fortawesome/free-solid-svg-icons';
 import { faDiscord } from '@fortawesome/free-brands-svg-icons';
+
+import './MenuDrawer.scss';
 
 const useStyles = makeStyles({
   list: {
@@ -39,12 +44,10 @@ export default function MenuDrawer() {
   const classes = useStyles();
   const { state, dispatch } = useContext(MenuContext);
   const synergyContext = useContext(SynergyContext);
-  const [selected, setSelected] = useState("");
-
+  const history = useHistory();
   const clans = synergyContext.state.clans.length > 0
     ? synergyContext.state.clans
     : [];
-
   const toggleDrawer = (open) => (event) => {
     if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
       return;
@@ -52,27 +55,97 @@ export default function MenuDrawer() {
     dispatch({ type: 'toggleDrawer', payload: open });
   };
 
-  const renderClanList = (clans) => {
+  const menuLinks = [
+    {
+      key: 'overview',
+      icon: faHome,
+      text: 'Overview',
+      path: '/'
+    },
+    {
+      key: 'clans',
+      icon: faShieldAlt,
+      text: 'Clans',
+      path: '/clans'
+    },
+    {
+      key: 'members',
+      icon: faUsers,
+      text: 'Members',
+      path: '/members'
+    },
+    {
+      key: 'analytics',
+      icon: faChartLine,
+      text: 'Analytics',
+      path: '/analytics'
+    },
+    {
+      key: 'tournaments',
+      icon: faSitemap,
+      text: 'Tournaments',
+      path: '/tournaments'
+    },
+    {
+      key: 'giveaways',
+      icon: faHandHoldingUsd,
+      text: 'Give-Aways',
+      path: '/giveaways'
+    },
+    {
+      key: 'discord',
+      icon: faDiscord,
+      text: 'Discord',
+      path: '/discord'
+    }
+  ];
+
+  const renderNavLinks = (links, clans) => {
+    let $links = links.map(link => {
+      return (
+        <Link to={link.path}>
+        <ListItem selected={history.location.pathname === link.path} button key={`${link.key}`}>
+          <ListItemIcon><FontAwesomeIcon className="small_icon" icon={link.icon} /></ListItemIcon>
+          <ListItemText primary={`${link.text}`} />
+        </ListItem>
+        </Link>
+      );
+    });
     let $clans = clans.map(clan => {
       const badge = clan.badge_id
         ? require(`../../assets/cr-assets/images/badges/${clan.badge_id}.png`)
         : require(`../../assets/cr-assets/images/badges/0.png`);
 
       return (
-        <ListItem button key={clan.name}>
-          <ListItemIcon>
-            <img
-              className="small_icon" 
-              src={badge}
-              alt="Clan Badge"
-            />
-          </ListItemIcon>
-          <ListItemText primary={clan.name} />
-        </ListItem>
+        <Link to={`/clans/${clan.tag}`}>
+          <ListItem selected={history.location.pathname === `/clans/${clan.tag}`} button key={clan.name}>
+            <ListItemIcon>
+              <img
+                className="small_icon" 
+                src={badge}
+                alt="Clan Badge"
+              />
+            </ListItemIcon>
+            <ListItemText primary={clan.name} />
+          </ListItem>
+        </Link>
       );
     });
-    return $clans;
-  }
+    return (
+      <React.Fragment>
+        <List className="menu-list">
+          {$links}
+        </List>
+        <Divider />
+        <List className="menu-list">
+          {$clans}
+        </List>
+      </React.Fragment>
+
+    );
+  };
+
+
   const list = (anchor) => (
     <div
       className={clsx(classes.list, {
@@ -82,40 +155,7 @@ export default function MenuDrawer() {
       onClick={toggleDrawer(false)}
       onKeyDown={toggleDrawer(false)}
     >
-      <List className="menu-list">
-        <ListItem selected={selected === 'overview'} button key={"overview"} onClick={(e) => setSelected("overview")}>
-          <ListItemIcon><FontAwesomeIcon className="small_icon" icon={faHome} /></ListItemIcon>
-          <ListItemText primary={"Overview"} className="font-override scmagic" />
-        </ListItem>
-        <ListItem button key={"clans"}>
-          <ListItemIcon><FontAwesomeIcon className="small_icon" icon={faShieldAlt} /></ListItemIcon>
-          <ListItemText primary={"Clans"} />
-        </ListItem>
-        <ListItem button key={"members"}>
-          <ListItemIcon><FontAwesomeIcon className="small_icon" icon={faUsers} /></ListItemIcon>
-          <ListItemText primary={"Members"} />
-        </ListItem>
-        <ListItem button key={"analytics"}>
-          <ListItemIcon><FontAwesomeIcon className="small_icon" icon={faChartLine} /></ListItemIcon>
-          <ListItemText primary={"Analytics"} />
-        </ListItem>
-        <ListItem button key={"tournaments"}>
-          <ListItemIcon><FontAwesomeIcon className="small_icon" icon={faSitemap} /></ListItemIcon>
-          <ListItemText primary={"Tournaments"} />
-        </ListItem>
-        <ListItem button key={"giveaways"}>
-          <ListItemIcon><FontAwesomeIcon className="small_icon" icon={faHandHoldingUsd} /></ListItemIcon>
-          <ListItemText primary={"Give-aways"} />
-        </ListItem>
-        <ListItem button key={"discord"}>
-          <ListItemIcon><FontAwesomeIcon className="small_icon" icon={faDiscord} /></ListItemIcon>
-          <ListItemText primary={"Discord"} />
-        </ListItem>
-      </List>
-      <Divider />
-      <List>
-        {renderClanList(clans)}
-      </List>
+      {renderNavLinks(menuLinks, clans)}
     </div>
   );
 

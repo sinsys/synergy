@@ -15,20 +15,32 @@ const PublicRouter = () => {
           component={Home}
         />
         <Route
-          exact path={'/clans/all'}
+          exact path={'/clans'}
+          component={Clans}
+        />
+        <Route
+          exact path={'/members'}
+          component={Clans}
+        />
+        <Route
+          exact path={'/analytics'}
+          component={Clans}
+        />
+        <Route
+          exact path={'/tournaments'}
+          component={Clans}
+        />
+        <Route
+          exact path={'/giveaways'}
+          component={Clans}
+        />
+        <Route
+          exact path={'/discord'}
           component={Clans}
         />
         <Route
           exact path={'/clans/:clan_tag'}
-          component={Clan}
-        />
-        <Route
-          exact path={'/players/all'}
-          component={Players}
-        />
-        <Route
-          exact path={'players/:clan_tag'}
-          component={Players}
+          component={Clans}
         />
       </Switch>
     </div>

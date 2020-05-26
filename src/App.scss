@@ -24,3 +24,12 @@
 .font-override.scmagic {
   font-family: 'scmagic';
 }
+
+a,
+a:visited,
+a:active,
+a:hover,
+a:focus {
+  color: $white;
+  text-decoration: none;
+}

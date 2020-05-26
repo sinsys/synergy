@@ -41,8 +41,8 @@ const MenuBar = (props) => {
   return (
     <AppBar position="sticky" className={classes.root}>
       <Toolbar>
-        <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-          <MenuIcon onClick={toggleDrawer(true)} />
+        <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu"  onClick={toggleDrawer(true)} >
+          <MenuIcon />
         </IconButton>
         <Typography variant="h6" className={classes.title}>
           Synergy Gaming
