@@ -1,13 +1,13 @@
+// View Component - Home page aka Overview
 import React, { useContext } from 'react';
-// import { useHistory } from 'react-router-dom';
+
 import { SynergyContext } from 'contexts/SynergyContext';
-import './Home.scss';
-// import Button from 'components/elements/Button';
+
+import './Views.scss';
 
 const Home = () => {
 
-  const { state } = useContext(SynergyContext);
-  // const history = useHistory();
+  const { state, dispatch } = useContext(SynergyContext);
 
   return (
     <div className="HomeView View">
