@@ -1,8 +1,8 @@
-.HomeView {
-  width: 100%;
+.View {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  justify-content: flex-start;
   align-items: center;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
 }

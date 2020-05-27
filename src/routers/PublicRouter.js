@@ -2,8 +2,9 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import Home from 'components/views/Home.js';
 import Clans from 'components/views/Clans';
-import Clan from 'components/views/Clan';
+
 import Players from 'components/views/Players';
+import Clan from 'components/views/Clan';
 
 const PublicRouter = () => {
 
@@ -40,7 +41,7 @@ const PublicRouter = () => {
         />
         <Route
           exact path={'/clans/:clan_tag'}
-          component={Clans}
+          component={Clan}
         />
       </Switch>
     </div>

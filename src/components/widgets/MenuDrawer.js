@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Link, useHistory, useRouteMatch } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
@@ -41,13 +41,24 @@ const useStyles = makeStyles({
 
 export default function MenuDrawer() {
 
+  // Classes for the Drawer Mui Component
   const classes = useStyles();
-  const { state, dispatch } = useContext(MenuContext);
-  const synergyContext = useContext(SynergyContext);
+  
+  // Used for accessing location
   const history = useHistory();
+
+  // Set main context as our MenuContext
+  const { state, dispatch } = useContext(MenuContext);
+
+  // Import clan/player data
+  const synergyContext = useContext(SynergyContext);
+
+  // Set clan badges after fetch
   const clans = synergyContext.state.clans.length > 0
     ? synergyContext.state.clans
     : [];
+
+  // Open / Close drawer function
   const toggleDrawer = (open) => (event) => {
     if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
       return;
@@ -55,6 +66,7 @@ export default function MenuDrawer() {
     dispatch({ type: 'toggleDrawer', payload: open });
   };
 
+  // Main menu links obj
   const menuLinks = [
     {
       key: 'overview',
@@ -100,7 +112,10 @@ export default function MenuDrawer() {
     }
   ];
 
+  // Render function for the entire link list
   const renderNavLinks = (links, clans) => {
+
+    // Base links
     let $links = links.map(link => {
       return (
         <Link to={link.path}>
@@ -111,6 +126,8 @@ export default function MenuDrawer() {
         </Link>
       );
     });
+
+    // Specific clan links
     let $clans = clans.map(clan => {
       const badge = clan.badge_id
         ? require(`../../assets/cr-assets/images/badges/${clan.badge_id}.png`)
@@ -131,6 +148,8 @@ export default function MenuDrawer() {
         </Link>
       );
     });
+
+    // Return all links in JSX
     return (
       <React.Fragment>
         <List className="menu-list">
@@ -145,7 +164,7 @@ export default function MenuDrawer() {
     );
   };
 
-
+  // Needed for Material UI Drawer
   const list = (anchor) => (
     <div
       className={clsx(classes.list, {

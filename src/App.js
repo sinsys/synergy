@@ -41,9 +41,9 @@ const App = () => {
   return (
     <MuiThemeProvider theme={supercell}>
       <div className="App">
-        <MenuBar />|
+        <MenuBar />
         <MenuDrawer />
-        <h1 style={{"padding": "1rem"}}>We are currently under construction. Please be patient while we develop more features.</h1>
+        <p style={{"padding": "1rem"}}>We are currently under construction. Please be patient while we develop more features.</p>
         <PublicRouter />
       </div>
     </MuiThemeProvider>

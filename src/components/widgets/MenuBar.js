@@ -15,7 +15,8 @@ const MenuBar = (props) => {
     root: {
       flexGrow: 1,
       background: '#131313',
-      marginBottom: '1rem'
+      marginBottom: '1rem',
+      maxHeight: '4rem'
     },
     menuButton: {
       marginRight: theme.spacing(2),

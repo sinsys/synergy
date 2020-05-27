@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 // import { useHistory } from 'react-router-dom';
 import { SynergyContext } from 'contexts/SynergyContext';
-import ClanBadge from 'components/badges/ClanBadge';
 import './Home.scss';
 // import Button from 'components/elements/Button';
 
@@ -11,15 +10,9 @@ const Home = () => {
   // const history = useHistory();
 
   return (
-    <div className="HomeView">
-      {/* <Button
-        text="Test"
-      /> */}
-      { state.clans.map(clan => {
-        return (
-          <ClanBadge key={clan.tag} clan={clan} />
-        );
-      })}
+    <div className="HomeView View">
+      <h1>Welcome to Synergy Gaming</h1>
+      <h2>Learn Together. Laugh Together. Compete Together.</h2>
     </div>
   );
 }

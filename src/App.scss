@@ -1,12 +1,14 @@
 @import './base.scss';
 
 .App {
+  min-height: 100vh;
   width: 100%;
   background: url('./assets/images/background.jpg') repeat;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+  position: relative;
 }
 
 .App * {
@@ -19,10 +21,11 @@
 .App h3,
 .App span {
   color: $white;
-}
-
-.font-override.scmagic {
-  font-family: 'scmagic';
+  text-shadow:
+   -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+     1px 1px 0 #000;
 }
 
 a,
@@ -32,4 +35,27 @@ a:hover,
 a:focus {
   color: $white;
   text-decoration: none;
+}
+
+.PublicRouter {
+  width: 100%;
+  height: 100%;
+}
+
+.App h1 {
+  font-size: 2.5rem;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+.App h2 {
+  font-size: 1.5rem;
+  padding: 0.33rem;
+  text-align: center;
+  color: $cream;
+  text-shadow:
+   -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+     1px 1px 0 #000;
 }
