@@ -9,14 +9,14 @@ const Clan = (props) => {
 
   const { state } = useContext(SynergyContext);
   const { clan_tag } = useParams();
-  if ( typeof clan_tag === "undefined" ) {
-    
-  }
   const clan = state.clans.find(clan => clan.tag === clan_tag);
-
+  
   return (
-    <div className="ClanView">
-      <ClanBadge clan={clan} />
+    <div className="ClanView View">
+      {typeof clan !== 'undefined' 
+        ? <ClanBadge clan={clan} />
+        : "Loading Data..."
+      }
     </div>
   );
 }

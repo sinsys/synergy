@@ -2,8 +2,11 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import Home from 'components/views/Home.js';
 import Clans from 'components/views/Clans';
-
-import Players from 'components/views/Players';
+import Members from 'components/views/Members';
+import Analytics from 'components/views/Analytics';
+import Tournaments from 'components/views/Tournaments';
+import GiveAways from 'components/views/GiveAways';
+import Discord from 'components/views/Discord';
 import Clan from 'components/views/Clan';
 
 const PublicRouter = () => {
@@ -21,23 +24,23 @@ const PublicRouter = () => {
         />
         <Route
           exact path={'/members'}
-          component={Clans}
+          component={Members}
         />
         <Route
           exact path={'/analytics'}
-          component={Clans}
+          component={Analytics}
         />
         <Route
           exact path={'/tournaments'}
-          component={Clans}
+          component={Tournaments}
         />
         <Route
           exact path={'/giveaways'}
-          component={Clans}
+          component={GiveAways}
         />
         <Route
           exact path={'/discord'}
-          component={Clans}
+          component={Discord}
         />
         <Route
           exact path={'/clans/:clan_tag'}

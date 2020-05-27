@@ -16,7 +16,7 @@ import './ClanBadge.scss';
 const ClanBadge = (props) => {
 
   const clan = props.clan;
-  const badge = clan.badge_id
+  const badge = (typeof clan.badge_id !== undefined)
     ? require(`../../assets/cr-assets/images/badges/${clan.badge_id}.png`)
     : require(`../../assets/cr-assets/images/badges/0.png`);
   

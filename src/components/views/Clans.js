@@ -8,14 +8,14 @@ import { SynergyContext } from 'contexts/SynergyContext';
 import ClanBadge from 'components/badges/ClanBadge';
 
 // Files / Styles
-import './Home.scss';
+import './Views.scss';
 
 const Clans = () => {
 
   const { state } = useContext(SynergyContext);
 
   return (
-    <div className="HomeView">
+    <div className="HomeView View">
       { state.clans.map(clan => {
         return (
           <ClanBadge key={clan.tag} clan={clan} />
