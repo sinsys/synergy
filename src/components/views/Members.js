@@ -11,7 +11,7 @@ const Members = () => {
 
   return (
     <div className="MembersView View">
-      <h1>All Synergy Members</h1>
+      <h1 className="small">Synergy Members</h1>
       <EnhancedTable />
     </div>
   );

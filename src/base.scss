@@ -4,6 +4,7 @@ $midBlue: #0099ff;
 $cream: #fff8c9;
 $yellow: #FFcc00;
 $green: #339933;
+
 // Fonts
 @font-face {
   font-family: 'scmagic';
@@ -16,4 +17,9 @@ $green: #339933;
   font-style: normal;
   font-weight: 400;
   src: url('./assets/fonts/Supercell_headline.otf') format('opentype');
+}
+
+// Helpers
+h1.small {
+  font-size: 1.5rem;
 }

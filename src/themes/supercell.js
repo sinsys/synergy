@@ -14,10 +14,22 @@ const supercell = createMuiTheme({
     action: {
         selected: 'rgba(255,255,255,0.2)',
         hover: 'rgba(150,150,255,0.2)',
-        disabled: '#9B9B9B'
+        disabled: '#9B9B9B',
+        active: '#CCC'
     }
   },
-
+  overrides: {
+    MuiTableSortLabel: {
+      root: {
+        color: 'white'
+      }
+    },
+    MuiButtonBase: {
+      root: {
+        color: 'white'
+      }
+    }
+  }
 });
 
 export default supercell;
