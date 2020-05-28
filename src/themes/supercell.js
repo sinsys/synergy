@@ -5,6 +5,9 @@ const supercell = createMuiTheme({
   typography: {
     body1: {
       fontFamily: 'sctitle'
+    },
+    body2: {
+      fontFamily: 'sctitle'
     }
   },
   palette: {
@@ -13,7 +16,8 @@ const supercell = createMuiTheme({
         hover: 'rgba(150,150,255,0.2)',
         disabled: '#9B9B9B'
     }
-}
+  },
+
 });
 
 export default supercell;

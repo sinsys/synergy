@@ -2,6 +2,7 @@
 import React, { useContext } from 'react';
 
 import { SynergyContext } from 'contexts/SynergyContext';
+import EnhancedTable from 'components/visualization/EnhancedTable/EnhancedTable';
 
 import './Views.scss';
 

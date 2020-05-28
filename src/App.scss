@@ -9,18 +9,11 @@
   justify-content: flex-start;
   align-items: center;
   position: relative;
+  color: $white;
 }
 
 .App * {
   font-family: 'scmagic';
-}
-
-.App p,
-.App h1,
-.App h2,
-.App h3,
-.App span {
-  color: $white;
 }
 
 a,
@@ -53,4 +46,8 @@ a:focus {
     1px -1px 0 #000,
     -1px 1px 0 #000,
      1px 1px 0 #000;
+}
+
+.Table_img {
+  max-height: 33px;
 }

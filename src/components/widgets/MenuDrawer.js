@@ -118,7 +118,7 @@ export default function MenuDrawer() {
     // Base links
     let $links = links.map(link => {
       return (
-        <Link to={link.path}>
+        <Link to={link.path} key={`link-${link.key}`}>
         <ListItem selected={history.location.pathname === link.path} button key={`${link.key}`}>
           <ListItemIcon><FontAwesomeIcon className="small_icon" icon={link.icon} /></ListItemIcon>
           <ListItemText primary={`${link.text}`} />
@@ -134,7 +134,7 @@ export default function MenuDrawer() {
         : require(`../../assets/cr-assets/images/badges/0.png`);
 
       return (
-        <Link to={`/clans/${clan.tag}`}>
+        <Link to={`/clans/${clan.tag}`} key={`link-${clan.name}`}>
           <ListItem selected={history.location.pathname === `/clans/${clan.tag}`} button key={clan.name}>
             <ListItemIcon>
               <img
