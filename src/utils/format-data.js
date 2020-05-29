@@ -66,7 +66,28 @@ const formatClanStatus = (clanStatus) => {
   };
 };
 
+const calculateTheoreticalBest = (players) => {
+  if (players.length > 0) {
+    let totalTrophies = 0;
+    let synergyMembers = 0;
+    let sortedPlayers = players.sort((a,b) => b.best_trophies - a.best_trophies);
+    sortedPlayers.forEach((player, i) => {
+      if ( i < 50 && player.clan_tag === "809R8PG8") synergyMembers += 1;
+      if ( i >= 0 && i < 10) totalTrophies += (player.best_trophies * 0.5);
+      if ( i >= 10 && i < 20) totalTrophies += (player.best_trophies * 0.25);
+      if ( i >= 20 && i < 30) totalTrophies += (player.best_trophies * 0.12);
+      if ( i >= 30 && i < 40) totalTrophies += (player.best_trophies * 0.1);
+      if ( i >= 40 && i < 50) totalTrophies += (player.best_trophies * 0.03);
+    });
+    return {
+      players: sortedPlayers,
+      totalTrophies: totalTrophies
+    };
+  }
+};
+
 module.exports = {
   formatPlayerStats,
-  formatClanStatus
+  formatClanStatus,
+  calculateTheoreticalBest
 };

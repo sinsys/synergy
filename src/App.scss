@@ -9,18 +9,11 @@
   justify-content: flex-start;
   align-items: center;
   position: relative;
+  color: $white;
 }
 
 .App * {
   font-family: 'scmagic';
-}
-
-.App p,
-.App h1,
-.App h2,
-.App h3,
-.App span {
-  color: $white;
 }
 
 a,
@@ -37,13 +30,13 @@ a:focus {
   height: 100%;
 }
 
-.App h1 {
+h1 {
   font-size: 2.5rem;
   padding: 0.5rem;
   text-align: center;
 }
 
-.App h2 {
+h2 {
   font-size: 1.5rem;
   padding: 0.33rem;
   text-align: center;
@@ -53,4 +46,11 @@ a:focus {
     1px -1px 0 #000,
     -1px 1px 0 #000,
      1px 1px 0 #000;
+}
+
+.Table_img {
+  max-height: 33px;
+}
+h1.small {
+  font-size: 1.5rem;
 }

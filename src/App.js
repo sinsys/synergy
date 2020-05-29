@@ -17,12 +17,11 @@ const App = () => {
   useEffect(() => {
     Promise.all([
       fetch(`${config.REACT_APP_API_ENDPOINT}/cards`),
-      fetch(`${config.REACT_APP_API_ENDPOINT}/clans`)
-      // fetch(`${config.REACT_APP_API_ENDPOINT}/wars/8URQ0UR8`),
-      // fetch(`${config.REACT_APP_API_ENDPOINT}/players/clan/8URQ0UR8`),
+      fetch(`${config.REACT_APP_API_ENDPOINT}/clans`),
+      fetch(`${config.REACT_APP_API_ENDPOINT}/players/all`)
     ])
       .then(responses => Promise.all(responses.map(res => res.json())))
-      .then(([cards, clans]) => {
+      .then(([cards, clans, players]) => {
   
         dispatch({
           type: 'setCards',
@@ -34,6 +33,10 @@ const App = () => {
           payload: clans
         });
 
+        dispatch({
+          type: 'setPlayers',
+          payload: players
+        });
       });
 
   },[dispatch]);

@@ -14,7 +14,8 @@ const SynergyContext = createContext();
 const initialState = {
   fetched: false,
   cards: [],
-  clans: []
+  clans: [],
+  players: []
 };
 
 const reducer = (state, action) => {
@@ -30,6 +31,11 @@ const reducer = (state, action) => {
         ...state,
         clans: payload
       };
+    case 'setPlayers':
+      return {
+        ...state,
+        players: payload
+      }
     default: return initialState;
   };
 };
