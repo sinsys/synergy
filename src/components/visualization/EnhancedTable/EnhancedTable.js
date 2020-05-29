@@ -1,5 +1,6 @@
 
 import React, { useContext } from 'react';
+import { useTheme } from '@material-ui/core/styles';
 import { makeStyles, withStyles } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
 import Paper from '@material-ui/core/Paper';
@@ -13,65 +14,6 @@ import TableRow from '@material-ui/core/TableRow';
 import TableSortLabel from '@material-ui/core/TableSortLabel';
 
 import { SynergyContext } from 'contexts/SynergyContext';
-
-const columns = [
-  { id: 'name', label: 'Name'},
-  { id: 'clan_name', label: 'Clan' },
-  { id: 'role', label: 'Role' },
-  { id: 'tag', label: 'Tag' },
-  { id: 'trophies', label: 'Trophies' },
-  { id: 'best_trophies', label: 'Personal Best' },
-  { id: 'war_day_wins', label: 'War Day Wins' },
-  { id: 'gold_perc', label: 'Lvl 11+ Cards' },
-  { id: 'legendary_perc', label: 'Lvl 12+ Cards' },
-  { id: 'donations', label: 'Donations' },
-  { id: 'donations_received', label: 'Donations Received' },
-  { id: 'favorite_card', label: 'Favorite Card'}
-];
-
-function createData(name, clan_name, role, tag, trophies, best_trophies, war_day_wins, gold_perc, legendary_perc, donations, donations_received, favorite_card) {
-  return { name, clan_name, role, tag, trophies, best_trophies, war_day_wins, gold_perc, legendary_perc, donations, donations_received, favorite_card };
-};
-
-const useStyles = makeStyles({
-  root: {
-    width: '100%'
-  },
-  container: {
-    maxHeight: window.innerHeight - 250
-  },
-  visuallyHidden: {
-    border: 0,
-    clip: 'rect(0 0 0 0)',
-    height: 1,
-    margin: -1,
-    overflow: 'hidden',
-    padding: 0,
-    position: 'absolute',
-    top: 20,
-    width: 1,
-  }
-});
-
-const StyledTableCell = withStyles((theme) => ({
-  head: {
-    backgroundColor: '#131313',
-    color: '#FFFFFF',
-  },
-  root: {
-    '&.MuiTableSortLabel-active': {
-      color: 'white'
-    }
-  }
-}))(TableCell);
-
-const StyledTableRow = withStyles((theme) => ({
-  root: {
-    '&:nth-of-type(odd)': {
-      backgroundColor: '#DDD'
-    }
-  }
-}))(TableRow);
 
 function descendingComparator(a, b, orderBy) {
   if (orderBy === 'gold_perc' || orderBy === 'legendary_perc') {
@@ -111,6 +53,54 @@ function stableSort(array, comparator) {
   return stabilizedThis.map((el) => el[0]);
 }
 
+const columns = [
+  { id: 'name', label: 'Name'},
+  { id: 'clan_name', label: 'Clan' },
+  { id: 'role', label: 'Role' },
+  { id: 'tag', label: 'Tag' },
+  { id: 'trophies', label: 'Trophies' },
+  { id: 'best_trophies', label: 'Personal Best' },
+  { id: 'war_day_wins', label: 'War Wins' },
+  { id: 'gold_perc', label: 'Cards Lvl 11+' },
+  { id: 'legendary_perc', label: 'Cards Lvl 12+' },
+  { id: 'donations', label: 'Donations' },
+  { id: 'donations_received', label: 'Donations Received' },
+  { id: 'favorite_card', label: 'Favorite Card'}
+];
+
+function createData(name, clan_name, role, tag, trophies, best_trophies, war_day_wins, gold_perc, legendary_perc, donations, donations_received, favorite_card) {
+  return { name, clan_name, role, tag, trophies, best_trophies, war_day_wins, gold_perc, legendary_perc, donations, donations_received, favorite_card };
+};
+
+const useStyles = makeStyles({
+  root: {
+    width: '100%'
+  },
+  container: {
+    maxHeight: window.innerHeight - 250
+  },
+  visuallyHidden: {
+    border: 0,
+    clip: 'rect(0 0 0 0)',
+    height: 1,
+    margin: -1,
+    overflow: 'hidden',
+    padding: 0,
+    position: 'absolute',
+    top: 20,
+    width: 1,
+    color: '#CCC'
+  }
+});
+
+const StyledTableRow = withStyles((theme) => ({
+  root: {
+    '&:nth-of-type(odd)': {
+      backgroundColor: '#DDD'
+    }
+  }
+}))(TableRow);
+
 export default function StickyHeadTable() {
     
   const { state, dispatch } = useContext(SynergyContext);
@@ -142,22 +132,23 @@ export default function StickyHeadTable() {
   };
 
   function EnhancedTableHead(props) {
-    const { classes, onSelectAllClick, order, orderBy, numSelected, rowCount, onRequestSort } = props;
+    const { classes, order, orderBy, onRequestSort } = props;
     const createSortHandler = (property) => (event) => {
       onRequestSort(event, property);
     };
-  
+
     return (
       <TableHead>
         <TableRow>
           {columns.map((headCell) => (
-            <StyledTableCell
+            <TableCell
               key={headCell.id}
               align={headCell.numeric ? 'right' : 'left'}
               padding={headCell.disablePadding ? 'none' : 'default'}
               sortDirection={orderBy === headCell.id ? order : false}
             >
               <TableSortLabel
+                classes={{root: classes.sortLabel, active: classes.sortLabel}}
                 active={orderBy === headCell.id}
                 direction={orderBy === headCell.id ? order : 'asc'}
                 onClick={createSortHandler(headCell.id)}
@@ -169,7 +160,7 @@ export default function StickyHeadTable() {
                   </span>
                 ) : null}
               </TableSortLabel>
-            </StyledTableCell>
+            </TableCell>
           ))}
         </TableRow>
       </TableHead>
@@ -180,39 +171,36 @@ export default function StickyHeadTable() {
     classes: PropTypes.object.isRequired,
     onRequestSort: PropTypes.func.isRequired,
     order: PropTypes.oneOf(['asc', 'desc']).isRequired,
-    orderBy: PropTypes.string.isRequired,
-    rowCount: PropTypes.number.isRequired,
+    orderBy: PropTypes.string.isRequired
   };
 
   const classes = useStyles();
-  const [order, setOrder] = React.useState('asc');
-  const [orderBy, setOrderBy] = React.useState('calories');
-  const [selected, setSelected] = React.useState([]);
+  const [order, setOrder] = React.useState('desc');
+  const [orderBy, setOrderBy] = React.useState('trophies');
   const [page, setPage] = React.useState(0);
-  const [rowsPerPage, setRowsPerPage] = React.useState(50);
+  const [rowsPerPage, setRowsPerPage] = React.useState(10);
+
   const handleRequestSort = (event, property) => {
     const isAsc = orderBy === property && order === 'asc';
     setOrder(isAsc ? 'desc' : 'asc');
     setOrderBy(property);
   };
-  
+
   return (
     <Paper className={classes.root}>
       <TableContainer className={classes.container}>
         <Table stickyHeader aria-label="sticky table" size={'small'}>
           <EnhancedTableHead
             classes={classes}
-            numSelected={selected.length}
             order={order}
             orderBy={orderBy}
             onRequestSort={handleRequestSort}
-            rowCount={rows.length}
           />
           <TableBody>
             {stableSort(rows, getComparator(order, orderBy))
               .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row, index) => {
                 return (
-                  <StyledTableRow hover role="checkbox" tabIndex={-1} key={row.tag}>
+                  <StyledTableRow hover tabIndex={-1} key={row.tag}>
                     {columns.map((column) => {
                       const value = row[column.id];
                       return (
@@ -228,14 +216,15 @@ export default function StickyHeadTable() {
         </Table>
       </TableContainer>
       <TablePagination
-        rowsPerPageOptions={[50, rows.length]}
+        style={{ display: "flex", justifyContent: "center" }}
+        rowsPerPageOptions={[10, 50, rows.length]}
         component="div"
         count={rows.length}
         rowsPerPage={rowsPerPage}
         page={page}
         onChangePage={handleChangePage}
         onChangeRowsPerPage={handleChangeRowsPerPage}
-        labelRowsPerPage={"Players Per Page"}
+        labelRowsPerPage={"Rows/Page"}
       />
     </Paper>
   );

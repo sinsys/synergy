@@ -1,5 +1,6 @@
 // themes/supercell.js
 import { createMuiTheme } from '@material-ui/core/styles'
+import 'base.scss';
 
 const supercell = createMuiTheme({
   typography: {
@@ -12,24 +13,31 @@ const supercell = createMuiTheme({
   },
   palette: {
     action: {
-        selected: 'rgba(255,255,255,0.2)',
-        hover: 'rgba(150,150,255,0.2)',
-        disabled: '#9B9B9B',
-        active: '#CCC'
+      selected: 'rgba(255,255,255,0.2)',
+      hover: 'rgba(150,150,255,0.2)',
+      disabled: '#9B9B9B'
     }
   },
   overrides: {
-    MuiTableSortLabel: {
+    MuiTableCell: {
       root: {
-        color: 'white'
+        '&$head': {
+          background: '#333'
+        }
       }
     },
-    MuiButtonBase: {
+    MuiTableSortLabel: {
       root: {
-        color: 'white'
+        color: '#0099ff',
+        '&$active, &:hover': {
+          color: '#fff8c9'
+        }
+      },
+      icon: {
+        fill: '#CCC'
       }
     }
   }
 });
-
+console.log(supercell);
 export default supercell;
