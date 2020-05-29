@@ -28,7 +28,11 @@ const supercell = createMuiTheme({
           backgroundColor: '#003366'
         },
         '&:hover, &:focus': {
-          backgroundColor: '#333'
+          backgroundColor: '#131313',
+          transition: 'all 0.2s ease',
+          '& > td.MuiTableCell-root': {
+            color: '#0099ff'
+          }
         }
       },
       hover: {}
@@ -36,7 +40,13 @@ const supercell = createMuiTheme({
     MuiTableCell: {
       root: {
         '&$head': {
-          background: '#333'
+          background: '#3b679e',
+          background: '-moz-linear-gradient(top,  #3b679e 0%, #2b88d9 50%, #207cca 51%, #7db9e8 100%)',
+          background: '-webkit-linear-gradient(top,  #3b679e 0%,#2b88d9 50%,#207cca 51%,#7db9e8 100%)',
+          background: 'linear-gradient(to bottom,  #3b679e 0%,#2b88d9 50%,#207cca 51%,#7db9e8 100%)',
+          filter: `progid:DXImageTransform.Microsoft.gradient( startColorstr='#3b679e', endColorstr='#7db9e8',GradientType=0 )`,
+          boxShadow: '0.3rem 0.3rem 0.5rem rgba(0,0,0,0.75)',
+          borderTop: '1px solid rgba(0,0,0,0.5)'
         },
         borderBottom: '0'
       },
@@ -58,7 +68,13 @@ const supercell = createMuiTheme({
     },
     MuiTablePagination: {
       root: {
-        background: '#333',
+        background: '#3b679e',
+        background: '-moz-linear-gradient(top,  #3b679e 0%, #2b88d9 50%, #207cca 51%, #7db9e8 100%)',
+        background: '-webkit-linear-gradient(top,  #3b679e 0%,#2b88d9 50%,#207cca 51%,#7db9e8 100%)',
+        background: 'linear-gradient(to bottom,  #3b679e 0%,#2b88d9 50%,#207cca 51%,#7db9e8 100%)',
+        filter: `progid:DXImageTransform.Microsoft.gradient( startColorstr='#3b679e', endColorstr='#7db9e8',GradientType=0 )`,
+        boxShadow: '0.3rem 0.3rem 0.5rem rgba(0,0,0,0.5)',
+        borderTop: '1px solid rgba(0,0,0,0.5)',
         color: '#FEFEFE'
       }
     }

@@ -15,17 +15,28 @@ const initialState = {
   fetched: false,
   cards: [],
   clans: [],
-  players: []
+  players: [],
+  wars: [],
+  warPlayers: []
 };
 
 const reducer = (state, action) => {
   let payload = action.payload;
   switch (action.type) {
+    case 'setAll': 
+      return {
+        ...state,
+        cards: payload.cards,
+        clans: payload.clans,
+        players: payload.players,
+        wars: payload.wars,
+        warPlayers: payload.warPlayers
+      };
     case 'setCards':
       return {
         ...state,
         cards: payload
-      }
+      };
     case 'setClans':
       return {
         ...state,
@@ -35,7 +46,17 @@ const reducer = (state, action) => {
       return {
         ...state,
         players: payload
-      }
+      };
+    case 'setWars':
+      return {
+        ...state,
+        wars: payload
+      };
+    case 'setWarPlayers':
+      return {
+        ...state,
+        warPlayers: payload
+      };
     default: return initialState;
   };
 };

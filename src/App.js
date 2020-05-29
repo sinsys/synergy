@@ -18,25 +18,23 @@ const App = () => {
     Promise.all([
       fetch(`${config.REACT_APP_API_ENDPOINT}/cards`),
       fetch(`${config.REACT_APP_API_ENDPOINT}/clans`),
-      fetch(`${config.REACT_APP_API_ENDPOINT}/players/all`)
+      fetch(`${config.REACT_APP_API_ENDPOINT}/players/all`),
+      fetch(`${config.REACT_APP_API_ENDPOINT}/wars/all`)
     ])
       .then(responses => Promise.all(responses.map(res => res.json())))
-      .then(([cards, clans, players]) => {
+      .then(([cards, clans, players, wars]) => {
   
         dispatch({
-          type: 'setCards',
-          payload: cards
+          type: 'setAll',
+          payload: {
+            cards: cards,
+            clans: clans,
+            players: players,
+            wars: wars.wars,
+            warPlayers: wars.warPlayers
+          }
         });
-
-        dispatch({
-          type: 'setClans',
-          payload: clans
-        });
-
-        dispatch({
-          type: 'setPlayers',
-          payload: players
-        });
+        
       });
 
   },[dispatch]);

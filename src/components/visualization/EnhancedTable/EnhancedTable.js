@@ -1,6 +1,6 @@
 
-import React, { useContext } from 'react';
-import { makeStyles, withStyles } from '@material-ui/core/styles';
+import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
 import Paper from '@material-ui/core/Paper';
 import Table from '@material-ui/core/Table';
@@ -12,29 +12,10 @@ import TablePagination from '@material-ui/core/TablePagination';
 import TableRow from '@material-ui/core/TableRow';
 import TableSortLabel from '@material-ui/core/TableSortLabel';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
-import { SynergyContext } from 'contexts/SynergyContext';
 import { 
-  descendingComparator, 
   getComparator,
-  stableSort,
-  createBasicColumns,
-  createBasicRows 
+  stableSort
 } from 'utils/table-utils';
-
-const columns = createBasicColumns([
-  'name',
-  'clan_name',
-  'role',
-  'tag',
-  'trophies',
-  'best_trophies',
-  'war_day_wins',
-  'gold_perc',
-  'legendary_perc',
-  'donations',
-  'donations_received',
-  'favorite_card'
-]);
 
 const useStyles = makeStyles({
   root: {
@@ -58,29 +39,14 @@ const useStyles = makeStyles({
 });
 
 const StickyHeadTable = (props) => {
-    
-  const { state, dispatch } = useContext(SynergyContext);
   const classes = useStyles();
   const [order, setOrder] = React.useState('desc');
   const [orderBy, setOrderBy] = React.useState('trophies');
   const [page, setPage] = React.useState(0);
-  const [rowsPerPage, setRowsPerPage] = React.useState(10);
+  const [rowsPerPage, setRowsPerPage] = React.useState(props.rowsPerPage);
 
-  const rows = state.players.map(player => {
-    let clanName = state.clans.find(clan => clan.id === player.clan_tag).name;
-    let role = player.role.charAt(0).toUpperCase() + player.role.slice(1);
-    let goldPerc = (player.gold_perc * 100).toFixed(1) + '%';
-    let legendaryPerc = (player.legendary_perc * 100).toFixed(1) + '%';
-    let favoriteCard = (
-      <img 
-        className="Table_img"
-        src={state.cards.find(card => card.id === player.favorite_card).icon_url}
-        alt={"Card Thumb"}
-      />
-    );
-    return createBasicRows(player.name, clanName, role, `#${player.tag}`, player.trophies, player.best_trophies, player.war_day_wins, goldPerc, legendaryPerc, player.donations, player.donations_received, favoriteCard);
-  });
-
+  const rows = props.rows;
+  const columns = props.columns;
 
   const handleRequestSort = (event, property) => {
     const isAsc = orderBy === property && order === 'asc';
@@ -98,6 +64,7 @@ const StickyHeadTable = (props) => {
   };
 
   const EnhancedTableHead = (props) => {
+    
     const { classes, order, orderBy, onRequestSort } = props;
     const createSortHandler = (property) => (event) => {
       onRequestSort(event, property);
@@ -114,7 +81,6 @@ const StickyHeadTable = (props) => {
               sortDirection={orderBy === headCell.id ? order : false}
             >
               <TableSortLabel
-                classes={{root: classes.sortLabel, active: classes.sortLabel}}
                 active={orderBy === headCell.id}
                 direction={orderBy === headCell.id ? order : 'asc'}
                 onClick={createSortHandler(headCell.id)}
@@ -156,7 +122,7 @@ const StickyHeadTable = (props) => {
               .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row, index) => {
                 return (
                   <TableRow tabIndex={-1} key={row.tag}>
-                    {columns.map((column) => {
+                    {props.columns.map((column) => {
                       const value = row[column.id];
                       return (
                         <TableCell key={column.id} align={column.align}>
@@ -186,3 +152,8 @@ const StickyHeadTable = (props) => {
 };
 
 export default StickyHeadTable;
+
+StickyHeadTable.defaultProps = {
+  rows: [],
+  columns: []
+};
