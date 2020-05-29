@@ -86,8 +86,38 @@ const calculateTheoreticalBest = (players) => {
   }
 };
 
+const createBasicRows = (
+  name, 
+  clan_name, 
+  role, tag, 
+  trophies, 
+  best_trophies, 
+  war_day_wins, 
+  gold_perc, 
+  legendary_perc, 
+  donations, 
+  donations_received, 
+  favorite_card
+) => {
+  return { 
+    name, 
+    clan_name, 
+    role, 
+    tag, 
+    trophies, 
+    best_trophies, 
+    war_day_wins, 
+    gold_perc, 
+    legendary_perc, 
+    donations, 
+    donations_received, 
+    favorite_card 
+  };
+};
+
 module.exports = {
   formatPlayerStats,
   formatClanStatus,
-  calculateTheoreticalBest
+  calculateTheoreticalBest,
+  createBasicRows
 };

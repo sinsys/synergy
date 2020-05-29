@@ -46,7 +46,7 @@ const App = () => {
       <div className="App">
         <MenuBar />
         <MenuDrawer />
-        <p style={{"padding": "1rem"}}>We are currently under construction. Please be patient while we develop more features.</p>
+        <p style={{"padding": "1rem"}}>We are currently under construction.</p>
         <PublicRouter />
       </div>
     </MuiThemeProvider>
