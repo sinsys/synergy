@@ -1,62 +1,3 @@
-const formatPlayerStats = (wars, members) => {
-  let memberData = {};
-
-  // Add basic member stats and keys to our current players data
-  members.forEach(member => {
-    memberData[member.tag] = member;
-  });
-
-  // Add war calculated statistics to our current player's data
-  wars.players.forEach(entry => {
-    if ( memberData.hasOwnProperty(entry.tag) ) {
-      let member = memberData[entry.tag];
-      if ( !member.hasOwnProperty('wars') ) {
-        member.wars = 1;
-        member.battles_played = entry.battles_played;
-        member.cards_earned = entry.cards_earned;
-        member.collection_day_battles_played = entry.collection_day_battles_played;
-        member.number_of_battles = entry.number_of_battles;
-        member.wins = entry.wins;
-        member.war_id = [entry.war_id];
-      } else {
-        member.battles_played += entry.battles_played;
-        member.cards_earned += entry.cards_earned;
-        member.clan_tag = entry.clan_tag;
-        member.collection_day_battles_played += entry.collection_day_battles_played;
-        member.number_of_battles += entry.number_of_battles;
-        member.wins += entry.wins;
-        member.wars += 1;
-        member.war_id.push(entry.war_id);
-      }
-    }
-  });
-  let membersArr = Object.keys(memberData).map(player => {
-    let curPlayer = memberData[player];
-    // Add war statistic information
-    curPlayer.wins = curPlayer.wins || 0;
-    curPlayer.win_perc = Math.round((curPlayer.wins / curPlayer.number_of_battles) * 100 );
-    curPlayer.missed_collections = (curPlayer.wars * 3) - curPlayer.collection_day_battles_played;
-    curPlayer.missed_war_battles = curPlayer.number_of_battles - curPlayer.battles_played;
-    curPlayer.legendary_perc = Math.round(curPlayer.legendary_perc * 100);
-    curPlayer.gold_perc = Math.round(curPlayer.gold_perc * 100);
-
-    // Handle NaN values
-    curPlayer.win_perc = isNaN(curPlayer.win_perc)
-      ? 0
-      : curPlayer.win_perc;
-    curPlayer.missed_collections = isNaN(curPlayer.missed_collections)
-      ? 0
-      : curPlayer.missed_collections;
-    curPlayer.missed_war_battles = isNaN(curPlayer.missed_war_battles)
-      ? 0
-      : curPlayer.missed_war_battles;
-    curPlayer.number_of_battles = curPlayer.number_of_battles || 0;
-
-    return curPlayer;
-  });
-  return membersArr;
-};
-
 const formatClanStatus = (clanStatus) => {
   switch(clanStatus) {
     case "inviteOnly": return "Invite";
@@ -86,38 +27,93 @@ const calculateTheoreticalBest = (players) => {
   }
 };
 
-const createBasicRows = (
-  name, 
-  clan_name, 
-  role, tag, 
-  trophies, 
-  best_trophies, 
-  war_day_wins, 
-  gold_perc, 
-  legendary_perc, 
-  donations, 
-  donations_received, 
-  favorite_card
-) => {
-  return { 
-    name, 
-    clan_name, 
-    role, 
-    tag, 
-    trophies, 
-    best_trophies, 
-    war_day_wins, 
-    gold_perc, 
-    legendary_perc, 
-    donations, 
-    donations_received, 
-    favorite_card 
-  };
+const makeWarDate = (dateStr) => {
+	let stripDate = dateStr.split('_')[0];
+  let year = stripDate.slice(0,4);
+  let month = stripDate.slice(4,6);
+  let day = stripDate.slice(6,8);
+  let hour = stripDate.slice(9,11);
+  let min = stripDate.slice(11,13);
+  let ss = stripDate.slice(13,15);
+  let sss = stripDate.slice(16,19);
+	let convertedDateStr = `${year}-${month}-${day}T${hour}:${min}:${ss}.${sss}Z`;
+	return new Date(convertedDateStr);
+}
+
+const formatPlayerStats = (warPlayers, players, clans, cards) => {
+  let playerData = {};
+  
+  players.forEach(player => {
+    player.wars = 0;
+    player.battles_played = 0;
+    player.cards_earned = 0;
+    player.collection_day_battles_played = 0;
+    player.number_of_battles = 0;
+    player.wins = 0;
+    player.war_id = [];
+    player.missed_collections = 0;
+    player.missed_war_battles = 0;
+    player.win_perc = 0;
+    player.war_streak = 0;
+    player.clan_name = "";
+    player.favorite_card_img_url = ""
+    playerData[player.tag] = player;
+  });
+
+  let sortedWarPlayers = warPlayers.sort((a,b) => makeWarDate(a.war_id) - makeWarDate(b.war_id));
+
+  sortedWarPlayers.map(warEntry => {
+    if ( playerData.hasOwnProperty(warEntry.tag) ) {
+      let cur = playerData[warEntry.tag];
+      cur.battles_played += warEntry.battles_played;
+      cur.cards_earned += warEntry.cards_earned;
+      cur.collection_day_battles_played += warEntry.collection_day_battles_played;
+      cur.war_id.push(warEntry.war_id);
+      cur.number_of_battles += warEntry.number_of_battles;
+      cur.wins += warEntry.wins;
+      cur.wars += 1;
+      // Check players war streak
+      if (warEntry.wins > 0) {
+        if (cur.war_streak >= 0) {
+          cur.war_streak += warEntry.wins;
+        } else {
+          cur.war_streak = warEntry.wins;
+        }
+      } else {
+        if (cur.war_streak >= 0) {
+          cur.war_streak = -Math.abs(warEntry.battles_played - warEntry.wins);
+        } else {
+          cur.war_streak -= (warEntry.battles_played - warEntry.wins)
+        }
+      }
+    }
+  });
+
+  let playersArr = Object.keys(playerData).map(key => {
+    let cur = playerData[key];
+    if ( cur.donations_received === 0 ) {
+      cur.donation_ratio = '1:0'
+    } else if ( cur.donations === 0 ) {
+      cur.donation_ratio = '0:1'
+    } else {
+      cur.donation_ratio = (cur.donations / cur.donations_received).toFixed(2);
+    }
+    cur.win_perc = parseFloat(((cur.wins / cur.battles_played) * 100).toFixed(1)) || 0;
+    cur.missed_collections = (cur.wars * 3) - cur.collection_day_battles_played;
+    cur.missed_war_battles = cur.number_of_battles - cur.battles_played;
+    cur.clan_name = clans.find(clan => clan.id === cur.clan_tag).name;
+    cur.role = cur.role.charAt(0).toUpperCase() + cur.role.slice(1);
+    cur.gold_perc = parseFloat((cur.gold_perc * 100).toFixed(1));
+    cur.legendary_perc = parseFloat((cur.legendary_perc * 100).toFixed(1));
+    cur.favorite_card_img_url = cards.find(card => card.id === cur.favorite_card).icon_url;
+    return cur;
+  });
+  return playersArr;
 };
 
 module.exports = {
   formatPlayerStats,
   formatClanStatus,
   calculateTheoreticalBest,
-  createBasicRows
+  makeWarDate
 };

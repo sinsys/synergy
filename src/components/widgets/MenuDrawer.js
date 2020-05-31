@@ -12,6 +12,7 @@ import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { 
@@ -156,9 +157,14 @@ export default function MenuDrawer() {
           {$links}
         </List>
         <Divider />
-        <List className="menu-list">
-          {$clans}
-        </List>
+        {clans.length === 0
+          ? <div className="progress-bar__wrapper">
+              <CircularProgress />
+            </div>
+          : <List className="menu-list">
+              {$clans}
+            </List>
+        }
       </React.Fragment>
 
     );

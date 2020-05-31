@@ -81,6 +81,7 @@ const StickyHeadTable = (props) => {
               sortDirection={orderBy === headCell.id ? order : false}
             >
               <TableSortLabel
+                key={headCell.id + "-label"}
                 active={orderBy === headCell.id}
                 direction={orderBy === headCell.id ? order : 'asc'}
                 onClick={createSortHandler(headCell.id)}

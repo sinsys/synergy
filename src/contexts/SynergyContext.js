@@ -4,9 +4,6 @@ import React, {
   useReducer
 } from 'react';
 
-// Utilities, helpers
-// const { formatPlayerStats } = require('../utils/format-data');
-
 // Initialize Context
 const SynergyContext = createContext();
 
@@ -31,31 +28,6 @@ const reducer = (state, action) => {
         players: payload.players,
         wars: payload.wars,
         warPlayers: payload.warPlayers
-      };
-    case 'setCards':
-      return {
-        ...state,
-        cards: payload
-      };
-    case 'setClans':
-      return {
-        ...state,
-        clans: payload
-      };
-    case 'setPlayers':
-      return {
-        ...state,
-        players: payload
-      };
-    case 'setWars':
-      return {
-        ...state,
-        wars: payload
-      };
-    case 'setWarPlayers':
-      return {
-        ...state,
-        warPlayers: payload
       };
     default: return initialState;
   };

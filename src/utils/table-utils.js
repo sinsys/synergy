@@ -59,6 +59,8 @@ const createColumns = (cols) => {
       case 'win_perc': return {id: col, label: 'War Win %'};
       case 'wars': return {id: col, label: 'Wars'};
       case 'wins': return {id: col, label: 'War Wins'};
+      case 'donation_ratio': return {id: col, label: 'Donation Ratio'};
+      case 'war_streak': return {id: col, label: 'War Win Streak'};
       default: return null;
     };
   });
@@ -93,32 +95,39 @@ const createBasicRows = (
   };
 };
 
-const createAdvancedRows = (
+const createClanRows = (
   name, 
-  clan_name, 
-  role, tag, 
-  trophies, 
-  best_trophies, 
-  war_day_wins, 
-  gold_perc, 
-  legendary_perc, 
-  donations, 
-  donations_received, 
-  favorite_card
+  win_perc,
+  war_streak,
+  gold_perc,
+  legendary_perc,
+  role,
+  missed_collections,
+  missed_war_battles,
+  war_day_wins,
+  clan_cards_collected,
+  cards_earned,
+  donation_ratio,
+  donations,
+  donations_received,
+  star_points
 ) => {
   return { 
     name, 
-    clan_name, 
-    role, 
-    tag, 
-    trophies, 
-    best_trophies, 
-    war_day_wins, 
-    gold_perc, 
-    legendary_perc, 
-    donations, 
-    donations_received, 
-    favorite_card 
+    win_perc,
+    war_streak,
+    gold_perc,
+    legendary_perc,
+    role,
+    missed_collections,
+    missed_war_battles,
+    war_day_wins,
+    clan_cards_collected,
+    cards_earned,
+    donation_ratio,
+    donations,
+    donations_received,
+    star_points
   };
 };
 
@@ -128,5 +137,5 @@ module.exports = {
   stableSort,
   createColumns,
   createBasicRows,
-  createAdvancedRows
+  createClanRows
 };
