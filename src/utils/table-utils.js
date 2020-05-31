@@ -1,20 +1,9 @@
 const descendingComparator = (a, b, orderBy) => {
-  if (orderBy === 'gold_perc' || orderBy === 'legendary_perc') {
-    let numericA = parseFloat(a[orderBy].split('%')[0]);
-    let numericB = parseFloat(b[orderBy].split('%')[0]);
-    if (numericA < numericB) {
-      return -1;
-    }
-    if (numericA > numericB) {
-      return 1;
-    }
-  } else {
-    if (b[orderBy] < a[orderBy]) {
-      return -1;
-    }
-    if (b[orderBy] > a[orderBy]) {
-      return 1;
-    }
+  if (b[orderBy] < a[orderBy]) {
+    return -1;
+  }
+  if (b[orderBy] > a[orderBy]) {
+    return 1;
   }
   return 0;
 };
