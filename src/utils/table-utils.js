@@ -42,14 +42,14 @@ const createColumns = (cols) => {
       case 'cards_earned': return {id: col, label: 'Cards Earned'};
       case 'clan_cards_collected': return {id: col, label: 'Collection Cards'};
       case 'missed_collections': return {id: col, label: 'Missed Collections'};
-      case 'missed_war_battles': return {id: col, label: 'Missed War Battles'};
+      case 'missed_war_battles': return {id: col, label: 'Missed Battles'};
       case 'star_points': return {id: col, label: 'Star Points'};
       case 'number_of_battles': return {id: col, label: 'War Battles'};
-      case 'win_perc': return {id: col, label: 'War Win %'};
+      case 'win_perc': return {id: col, label: 'War Win%'};
       case 'wars': return {id: col, label: 'Wars'};
       case 'wins': return {id: col, label: 'War Wins'};
       case 'donation_ratio': return {id: col, label: 'Donation Ratio'};
-      case 'war_streak': return {id: col, label: 'War Win Streak'};
+      case 'war_streak': return {id: col, label: 'War Streak'};
       default: return null;
     };
   });

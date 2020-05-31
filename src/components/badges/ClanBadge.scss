@@ -2,11 +2,11 @@
 
 .ClanBadge {
   background: rgba(0,0,0,0.25);
-  border-radius: 1rem;
+  border-radius: 0.25rem;
   margin: 0.5rem;
   box-shadow: 3px 3px 5px rgba(0,0,0,0.5);
-  max-width: 320px;
-  border: 3px solid rgba(0,0,0,0.25);
+  width: 95%;
+  max-width: 1080px;
   padding-bottom: 1rem;
 }
 
@@ -69,7 +69,7 @@
   background: -webkit-linear-gradient(top,  #3b679e 0%,#2b88d9 50%,#207cca 51%,#7db9e8 100%); /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(to bottom,  #3b679e 0%,#2b88d9 50%,#207cca 51%,#7db9e8 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3b679e', endColorstr='#7db9e8',GradientType=0 ); /* IE6-9 */
-  border-radius: 1rem 1rem 1rem 1rem;
+  border-radius: 0.25rem;
   box-shadow: 3px 3px 5px rgba(0,0,0,0.5);
   text-shadow:
     -1px 1px 0px darken($midBlue, 33%),

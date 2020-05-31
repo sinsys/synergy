@@ -45,7 +45,7 @@ const supercell = createMuiTheme({
           background: '-webkit-linear-gradient(top,  #3b679e 0%,#2b88d9 50%,#207cca 51%,#7db9e8 100%)',
           background: 'linear-gradient(to bottom,  #3b679e 0%,#2b88d9 50%,#207cca 51%,#7db9e8 100%)',
           filter: `progid:DXImageTransform.Microsoft.gradient( startColorstr='#3b679e', endColorstr='#7db9e8',GradientType=0 )`,
-          boxShadow: '0.3rem 0.3rem 0.5rem rgba(0,0,0,0.75)',
+          boxShadow: '0.1rem 0.1rem 0.25rem rgba(0,0,0,0.75)',
           borderTop: '1px solid rgba(0,0,0,0.5)'
         },
         borderBottom: '0'
