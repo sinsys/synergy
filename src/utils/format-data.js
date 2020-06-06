@@ -111,9 +111,18 @@ const formatPlayerStats = (warPlayers, players, clans, cards) => {
   return playersArr;
 };
 
+const convertCardsToObj = (cards) => {
+  let cardObj = {};
+  cards.forEach(card => {
+    cardObj[card.id] = card;
+  });
+  return cardObj;
+};
+
 module.exports = {
   formatPlayerStats,
   formatClanStatus,
   calculateTheoreticalBest,
-  makeWarDate
+  makeWarDate,
+  convertCardsToObj
 };

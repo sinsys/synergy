@@ -10,11 +10,12 @@ const SynergyContext = createContext();
 // Set default context
 const initialState = {
   fetched: false,
-  cards: [],
+  cards: {},
   clans: [],
   players: [],
   wars: [],
-  warPlayers: []
+  warPlayers: [],
+  warDecks: []
 };
 
 const reducer = (state, action) => {
@@ -27,7 +28,8 @@ const reducer = (state, action) => {
         clans: payload.clans,
         players: payload.players,
         wars: payload.wars,
-        warPlayers: payload.warPlayers
+        warPlayers: payload.warPlayers,
+        warDecks: payload.warDecks
       };
     default: return initialState;
   };

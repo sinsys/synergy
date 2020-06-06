@@ -4,10 +4,10 @@ import './Button.scss';
 const Button = (props) => {
   return (
     <div className="Button">
-      <a 
+      <a
         className={`button ${props.classes}`} 
-        target="_blank"
-        href="/"
+        target={props.target}
+        href={props.link}
       >
         <span>{props.text}</span>
       </a>

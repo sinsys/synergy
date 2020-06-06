@@ -1,5 +1,6 @@
 import React from 'react';
 
+import WarState from 'components/war/WarState';
 import trophy from '../../assets/images/trophy.png';
 import trophyCw from '../../assets/images/trophy-cw.png';
 import social from '../../assets/images/social.png';
@@ -93,6 +94,7 @@ const ClanBadge = (props) => {
         </div>
       </div>
 
+      <WarState active={true} />
     </div>
   );
 }

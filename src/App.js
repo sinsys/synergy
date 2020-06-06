@@ -6,7 +6,7 @@ import { SynergyContext } from 'contexts/SynergyContext';
 import MenuBar from 'components/widgets/MenuBar';
 import MenuDrawer from 'components/widgets/MenuDrawer';
 import supercell from 'themes/supercell';
-import { formatPlayerStats } from 'utils/format-data';
+import { formatPlayerStats, convertCardsToObj } from 'utils/format-data';
 
 // App Styles
 import './App.scss';
@@ -31,21 +31,23 @@ const App = () => {
       fetch(`${config.REACT_APP_API_ENDPOINT}/cards`),
       fetch(`${config.REACT_APP_API_ENDPOINT}/clans`),
       fetch(`${config.REACT_APP_API_ENDPOINT}/players/all`),
-      fetch(`${config.REACT_APP_API_ENDPOINT}/wars/all`)
+      fetch(`${config.REACT_APP_API_ENDPOINT}/wars/all`),
+      fetch(`${config.REACT_APP_API_ENDPOINT}/wardecks/8URQ0UR8`)
     ])
       .then(responses => Promise.all(responses.map(res => res.json())))
-      .then(([cards, clans, players, wars]) => {
+      .then(([cards, clans, players, wars, warDecks]) => {
 
         let enhancedPlayers = formatPlayerStats(wars.warPlayers, players, clans, cards);
 
         dispatch({
           type: 'setAll',
           payload: {
-            cards: cards,
+            cards: convertCardsToObj(cards),
             clans: clans,
             players: enhancedPlayers,
             wars: wars.wars,
-            warPlayers: wars.warPlayers
+            warPlayers: wars.warPlayers,
+            warDecks: warDecks
           }
         });
         

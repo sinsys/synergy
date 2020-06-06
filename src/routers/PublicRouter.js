@@ -8,6 +8,7 @@ import Tournaments from 'components/views/Tournaments';
 import GiveAways from 'components/views/GiveAways';
 import Discord from 'components/views/Discord';
 import Clan from 'components/views/Clan';
+import War from 'components/views/War';
 
 const PublicRouter = () => {
 
@@ -45,6 +46,10 @@ const PublicRouter = () => {
         <Route
           exact path={'/clans/:clan_tag'}
           component={Clan}
+        />
+        <Route
+          exact path={'/war/:clan_tag'}
+          component={War}
         />
       </Switch>
     </div>
