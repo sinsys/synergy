@@ -3,8 +3,10 @@ import Deck from 'components/battles/Deck';
 
 import { SynergyContext } from 'contexts/SynergyContext';
 
-const War = () => {
+const War = (props) => {
   const { state, dispatch } = useContext(SynergyContext);
+  const clanTag = props.match.params.clan_tag;
+  const decks = state.warDecks.filter(deck => deck.clan_tag === clanTag);
 
   const getDeckDetails = (decks) => {
     if ( decks.length > 0 ) {
@@ -27,7 +29,7 @@ const War = () => {
   
   return (
     <div className="War">
-      {getDeckDetails(state.warDecks).map(deck => {
+      {getDeckDetails(decks).map(deck => {
         return deck.won
           ? <Deck deck={deck} key={deck.id} />
           : <div key={deck.id} />

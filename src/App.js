@@ -21,7 +21,7 @@ const App = () => {
       fetch(`${config.REACT_APP_API_ENDPOINT}/clans`),
       fetch(`${config.REACT_APP_API_ENDPOINT}/players/all`),
       fetch(`${config.REACT_APP_API_ENDPOINT}/wars/all`),
-      fetch(`${config.REACT_APP_API_ENDPOINT}/wardecks/809R8PG8`)
+      fetch(`${config.REACT_APP_API_ENDPOINT}/wardecks/all`)
     ])
       .then(responses => Promise.all(responses.map(res => res.json())))
       .then(([cards, clans, players, wars, warDecks]) => {
