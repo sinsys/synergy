@@ -12,18 +12,7 @@ import { formatPlayerStats, convertCardsToObj } from 'utils/format-data';
 import './App.scss';
 
 const App = () => {
-  const makeWarDate = (dateStr) => {
-    let stripDate = dateStr.split('_')[0];
-    let year = stripDate.slice(0,4);
-    let month = stripDate.slice(4,6);
-    let day = stripDate.slice(6,8);
-    let hour = stripDate.slice(9,11);
-    let min = stripDate.slice(11,13);
-    let ss = stripDate.slice(13,15);
-    let sss = stripDate.slice(16,19);
-    let convertedDateStr = `${year}-${month}-${day}T${hour}:${min}:${ss}.${sss}Z`;
-    return new Date(convertedDateStr);
-  }
+
   const { dispatch } = useContext(SynergyContext);
   
   useEffect(() => {
@@ -32,7 +21,7 @@ const App = () => {
       fetch(`${config.REACT_APP_API_ENDPOINT}/clans`),
       fetch(`${config.REACT_APP_API_ENDPOINT}/players/all`),
       fetch(`${config.REACT_APP_API_ENDPOINT}/wars/all`),
-      fetch(`${config.REACT_APP_API_ENDPOINT}/wardecks/8URQ0UR8`)
+      fetch(`${config.REACT_APP_API_ENDPOINT}/wardecks/809R8PG8`)
     ])
       .then(responses => Promise.all(responses.map(res => res.json())))
       .then(([cards, clans, players, wars, warDecks]) => {

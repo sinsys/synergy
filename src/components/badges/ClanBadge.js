@@ -94,7 +94,7 @@ const ClanBadge = (props) => {
         </div>
       </div>
 
-      <WarState active={true} />
+      <WarState active={clan.war_status} tag={clan.tag}/>
     </div>
   );
 }

@@ -8,7 +8,7 @@ const Deck = (props) => {
   deckDetails.deck.forEach(card => {
     deckLink += `${card.id};`;
   });
-  deckLink += `&war=1`
+  deckLink += `&war=1`;
   return (
     <div className="deck">
       <p>Player: {deckDetails.name}</p>
@@ -22,12 +22,11 @@ const Deck = (props) => {
       <div className="deck_images">
         {deckDetails.deck.map(card => {
           return (
-            <img src={card.icon_url} alt={card.name + " card"} />
+            <img src={card.icon_url} alt={card.name + " card"} key={`${card.id}-${deckDetails.id}`}/>
           );
         })}
-        <Button text="Copy War Deck" link={deckLink} />
       </div>
-      
+      <Button text="Copy War Deck" link={deckLink} />
     </div>
   );
 };

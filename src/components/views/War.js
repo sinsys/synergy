@@ -28,9 +28,9 @@ const War = () => {
   return (
     <div className="War">
       {getDeckDetails(state.warDecks).map(deck => {
-        return (
-          <Deck deck={deck} key={deck.id} />
-        );
+        return deck.won
+          ? <Deck deck={deck} key={deck.id} />
+          : <div key={deck.id} />
       })}
     </div>
   )
